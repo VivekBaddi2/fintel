@@ -1,10 +1,16 @@
 import React from 'react'
+import BreadCrumb from '@/components/BreadCrumb'
 
 const page = () => {
     return (
-        <div className='container my-8 w-screen h-[60vh] mx-auto  flex items-center'>
-            <div className="content mx-6   h-full flex flex-col justify-center">
-                <div className="content-one mb-32  ">
+        <div className='container my-8 w-screen h-fit mx-auto '>
+            <div className="content mx-6 h-full flex flex-col justify-center text-justify">
+                <BreadCrumb items={[
+                    { label: 'Home', href: '/' },
+                    { label: 'About', href: '/AboutUs/whoweare' },
+                    { label: 'Our Vision and Mission' }
+                ]} />
+                <div className="content-one mb-24  ">
                     <h1 className='text-3xl font-semibold mb-4'>Our Vision</h1>
                     <p className='text-justify'>To be a globally respected and accepted organization that provides best-of-breed business solutions leveraging on technology delivered by the best-in-class people resulting in maximum customer satisfaction & contributing to the productivity of Business & Social Systems through promotion of Indian Style of Management.</p>
                 </div>

@@ -1,9 +1,16 @@
 import AboutPageNav from '@/components/AboutPageNav'
+import BreadCrumb from '@/components/BreadCrumb'
 import React from 'react'
+
 const page = () => {
     return (
         <div className='container my-8 w-screen  mx-auto'>
             <div className="content mx-6 ">
+                <BreadCrumb items={[
+                    { label: 'Home', href: '/' },
+                    { label: 'About', href: '/AboutUs/whoweare' },
+                    { label: 'Who We Are' }
+                ]} />
                 <AboutPageNav />
                 <div className="content-one mb-8">
                     <h1 className='text-3xl font-semibold mb-4'>Welcome to Fintel Solutions</h1>

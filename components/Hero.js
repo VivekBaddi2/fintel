@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import { motion } from "framer-motion";
+import Link from 'next/link';
 
 const Hero = () => {
     return (
@@ -33,9 +34,11 @@ const Hero = () => {
                                 We provide end-to-end business support through strategic consulting, assurance, HR, compliance, payroll, and MIS 360 services. Our expert-driven approach ensures your operations run efficiently, allowing you to focus on growth while we manage the backbone of your business.
                             </p>
                             <div className="flex justify-center">
-                                <button className="inline-flex text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg cursor-pointer">
-                                    Get in Touch
-                                </button>
+                                <Link href='/contact'>
+                                    <button className="inline-flex text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg cursor-pointer">
+                                        Get in Touch
+                                    </button>
+                                </Link>
                                 {/* <button className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">
                                 Button
                             </button> */}
@@ -44,8 +47,8 @@ const Hero = () => {
                     </div>
                 </section>
 
-            </div>
-        </motion.div>
+            </div >
+        </motion.div >
     )
 }
 
