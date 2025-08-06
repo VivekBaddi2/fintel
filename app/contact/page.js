@@ -10,17 +10,6 @@ const page = () => {
             </div>
             <section className="text-gray-600 body-font relative w-[80vw] h-[80vh] mx-auto my-12">
                 <div className="absolute inset-0 bg-gray-300 w-[80vw] h-[80vh]">
-                    {/* <iframe
-                        width="100%"
-                        height="100%"
-                        frameBorder="0"
-                        marginHeight="0"
-                        marginWidth="0"
-                        title="map"
-                        scrolling="no"
-                        src="https://www.google.com/maps/embed?pb=!3m2!1sen!2sin!4v1754137220843!5m2!1sen!2sin!6m8!1m7!1s4zhYuvwkutK5h2buOcAynQ!2m2!1d15.3648350153096!2d75.1233128872171!3f59.01331416363016!4f18.381067946269553!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-                        style={{ filter: 'grayscale(1) contrast(1.2) opacity(0.4)' }}
-                    ></iframe> */}
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3847.2150571231823!2d75.1233128872171!3d15.3648350153096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb8d0c5aaaaaaad%3A0x9a29af814ca1a803!2sFintel%20Solutions%20Pvt%20Ltd.!5e0!3m2!1sen!2sin!4v1754137281711!5m2!1sen!2sin" style={{ width: '80vw', height: '80vh' }}
                         allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                 </div>

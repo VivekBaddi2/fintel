@@ -2,6 +2,8 @@
 import React from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+// import './Footer.css' 
+// Footer.css stylesheet removed temporarily
 
 const Footer = () => {
     return (
@@ -11,24 +13,11 @@ const Footer = () => {
             transition={{ duration: 0.8, ease: "easeOut" }} // Transition properties
         >
             <div>
-                <footer className="text-gray-600 body-font">
-                    <div className="container px-5 py-24  mx-auto flex lg:justify-between md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
-                        <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+                <footer className="footer text-gray-600 body-font">
+                    <div className="footer-container container w-[90vw] px-5 py-24  mx-auto flex lg:justify-between md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+                        <div className="footer-brand w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
                             <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-                                {/* <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                className="w-10 h-10 text-white p-2 bg-blue-500 rounded-full"
-                                viewBox="0 0 24 24"
-                            >
-                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                            </svg>
-                            <span className="ml-3 text-xl">Tailblocks</span> */}
-                                <Image className='object-cover object-center rounded'
+                                <Image className='footer-logo object-cover object-center rounded'
                                     src="/fintel-logo.png"
                                     width={210}
                                     height={376}
@@ -45,9 +34,9 @@ const Footer = () => {
                                 info@fintel.in
                             </p>
                         </div>
-                        <div className="w-fit h-[100px] flex-grow flex items-center flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center lg:absolute lg:right-[86px]">
+                        <div className="footer-links w-fit h-[100px] flex-grow flex items-center flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center lg:absolute lg:right-[86px]">
                             <div className="w-[300px] h-[100px] flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
-                                <div className="lg:w-1/2 md:w-1/2 w-full px-4">
+                                <div className="footer-column lg:w-1/2 md:w-1/2 w-full px-4">
                                     {/* <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2> */}
                                     <nav className="list-none mb-10 w-full flex gap-2 md:block">
                                         <li>
@@ -79,7 +68,7 @@ const Footer = () => {
                         </div>
 
                     </div>
-                    <div className="bg-gray-100">
+                    <div className="footer-bottom bg-gray-100">
                         <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
                             <p className="text-gray-500 text-sm text-center sm:text-left">
                                 © 2025 Fintel —
@@ -92,7 +81,7 @@ const Footer = () => {
                                     @finteltweets
                                 </a>
                             </p>
-                            <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+                            <span className="footer-social inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
                                 <a className="text-gray-500" href='https://www.facebook.com/fintelsolutions'>
                                     <svg fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
                                         <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />

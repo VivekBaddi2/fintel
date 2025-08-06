@@ -1,0 +1,87 @@
+.testimonials-section {
+  background-color: #f9fafb;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.testimonials-section h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.testimonials-section p.sub-heading {
+  font-size: 1.1rem;
+  color: #4b5563;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+}
+
+/* Grid for testimonials */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Individual card */
+.testimonial-card {
+  background-color: #ffffff;
+  padding: 32px 24px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease;
+  margin: 0px 8px ;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-6px);
+  /* background-color: #f0f4ff; */
+  box-shadow: 
+    0 16px 24px rgba(59, 130, 246, 0.1),  /* General soft shadow */
+    0 20px 20px rgba(59, 130, 246, 0.3);  /* Blurred blue bottom shadow */
+}
+
+/* Avatar */
+.testimonial-avatar {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Quote */
+.testimonial-text {
+  font-size: 1rem;
+  color: #374151;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+/* Name */
+.testimonial-name {
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 0.25rem;
+}
+
+/* Role */
+.testimonial-role {
+  font-size: 0.95rem;
+  color: #6b7280;
+}
+
+/* Divider line under avatar */
+.testimonial-divider {
+  width: 40px;
+  height: 3px;
+  background-color: #3b82f6;
+  margin: 1rem auto;
+  border-radius: 9999px;
+}

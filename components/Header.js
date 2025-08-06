@@ -4,11 +4,12 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 
+
 const Header = () => {
     return (
         <div className='h-[10vh]'>
-            <header className="text-gray-600 body-font fixed left-0 right-0 mx-auto z-50 bg-white/30 backdrop-blur-md">
-                <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center justify-center">
+            <header className="fixed top-0 w-full bg-white/80 backdrop-blur-md shadow-md z-[999] text-gray-600 body-font left-0 right-0 ">
+                <div className="container w-[90vw] mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center justify-center">
                     <Link className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" href="/">
                         <Image className='object-cover object-center rounded'
                             src="/fintel-logo.png"
@@ -44,7 +45,7 @@ const Header = () => {
                         <Link className="mr-5 hover:text-gray-900" href="#">InfoZone</Link>
                     </nav>
                     <Link href='/contact'>
-                        <button className="inline-flex items-center bg-blue-500 text-white border-0 py-1 px-3 focus:outline-none hover:bg-blue-600 rounded text-lg cursor-pointer mt-4 md:mt-0">
+                        <button className="bg-blue-500 text-white px-3 py-2 rounded-full font-semibold transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-[0_10px_20px_rgba(59,130,246,0.3)] inline-flex items-center border-0 focus:outline-none hover:bg-blue-600 text-lg cursor-pointer mt-4 md:mt-0">
                             Get in Touch
                             <svg
                                 fill="none"
