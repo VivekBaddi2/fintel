@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from "framer-motion";
-import './Testimonials.css'
+// import './Testimonials.css'
 
 const Testimonials = () => {
     return (
@@ -10,8 +10,8 @@ const Testimonials = () => {
             transition={{ duration: 0.8, ease: "easeOut" }} // Transition properties
         >
             <div>
-                <section className="testimonials-section text-gray-600 body-font">
-                    <div className="container w-[90vw] px-5 md:py-36 py-16 mx-auto">
+                <section className="testimonials-section bg-[#F5F4F4] text-gray-600 body-font">
+                    <div className="container w-[90vw] px-5 md:py-24 py-8 mx-auto">
                         <div className="text-center mb-14">
                             <h1 className="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-6">
                                 Testimonials

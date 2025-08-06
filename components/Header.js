@@ -8,11 +8,11 @@ import Link from 'next/link'
 const Header = () => {
     return (
         <div className='h-[10vh]'>
-            <header className="fixed top-0 w-full bg-white/80 backdrop-blur-md shadow-md z-[999] text-gray-600 body-font left-0 right-0 ">
+            <header className="absolute top-0 w-full bg-transparent z-[999] text-white body-font left-0 right-0 ">
                 <div className="container w-[90vw] mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center justify-center">
                     <Link className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" href="/">
                         <Image className='object-cover object-center rounded'
-                            src="/fintel-logo.png"
+                            src="/logo-6.png"
                             width={240}
                             height={406}
                             alt="Fintel logo"

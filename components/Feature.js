@@ -9,8 +9,8 @@ const Feature = () => {
             transition={{ duration: 0.8, ease: "easeOut" }} // Transition properties
         >
             <div>
-                <section className="bg-[#f9fafb] py-20 px-5 text-center">
-                    <div className="container w-[90vw] px-5 md:py-36 py-16 mx-auto">
+                <section className="bg-[#F5F4F4] py-8 px-5 text-center">
+                    <div className="container w-[90vw] px-5 md:py-24 py-16 mx-auto">
                         <div className="text-center mb-14">
                             <h1 className="text-4xl font-extrabold text-gray-800 mb-2 sm:text-3xl text-center title-font ">
                                 Our Services

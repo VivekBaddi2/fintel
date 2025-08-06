@@ -9,8 +9,8 @@ const About = () => {
             transition={{ duration: 0.8, ease: "easeOut" }} // Transition properties
         >
             <div>
-                <section className="bg-[#f9fafb] py-20 px-5 text-center text-gray-600 body-font">
-                    <div className="container w-[90vw] px-5 md:py-36 py-16 mx-auto">
+                <section className="bg-[#F5F4F4] py-8 px-5 text-center text-gray-600 body-font">
+                    <div className="container w-[90vw] px-5 md:py-12 py-8 mx-auto">
                         <div className="flex flex-col text-center w-full mb-20">
                             <h2 className="text-xl sm:text-2xl text-blue-500 font-semibold mb-2 tracking-wide title-font">
                                 Driven by Expertise
