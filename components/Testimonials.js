@@ -1,83 +1,170 @@
-import React from 'react'
-import { motion } from "framer-motion";
-// import './Testimonials.css'
+import React, { useState } from 'react';
 
-const Testimonials = () => {
+const ComponentName = () => {
     return (
-        <motion.div
-            initial={{ opacity: 0, y: 50 }} // Initial state (invisible and slightly down)
-            whileInView={{ opacity: 1, y: 0 }} // Animate to visible and normal position when in view
-            transition={{ duration: 0.8, ease: "easeOut" }} // Transition properties
-        >
-            <div>
-                <section className="testimonials-section bg-[#F5F4F4] text-gray-600 body-font">
-                    <div className="container w-[90vw] px-5 md:py-24 py-8 mx-auto">
-                        <div className="text-center mb-14">
-                            <h1 className="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-6">
-                                Testimonials
-                            </h1>
-                            <p className="sub-heading text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">
-                                Hear what our clients have to say about their experience with Fintel Solutions and our expert-driven approach.
-                            </p>
+        <section className="py-12 bg-[#f9fafb] sm:py-16 lg:py-20">
+            <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+                <div className="flex flex-col items-center">
+                    <div className="text-center">
+                        <p className="text-lg font-medium text-gray-600 font-pj">2,157 people have said how good Rareblocks</p>
+                        <h2 className="mt-4 text-3xl font-bold text-gray-900 sm:text-4xl xl:text-5xl font-pj">Our happy clients say about us</h2>
+                    </div>
+
+                    <div className="mt-8 text-center md:mt-16 md:order-3">
+                        <a href="#" title="" className="pb-2 text-base font-bold leading-7 text-gray-900 transition-all duration-200 border-b-2 border-gray-900 hover:border-gray-600 font-pj focus:outline-none focus:ring-1 focus:ring-gray-900 focus:ring-offset-2 hover:text-gray-600"> Check all 2,157 reviews </a>
+                    </div>
+
+                    <div className="relative mt-10 md:mt-24 md:order-2">
+                        <div className="absolute -inset-x-1 inset-y-16 md:-inset-x-2 md:-inset-y-6">
+                            <div className="w-full h-full max-w-5xl mx-auto rounded-3xl opacity-30 blur-lg filter" style={{
+                                background: 'linear-gradient(90deg, #44ff9a 0.55%, #44b0ff 22.86%, #8b44ff 48.36%, #ff6644 73.33%, #ebff70 99.34%)'
+                            }}></div>
                         </div>
-                        <div className="mx-auto w-fit flex flex-wrap -m-12 mt-8">
-                            <div className="testimonial-card lg:w-[380px] lg:mb-0 mb-6 p-4">
-                                <div className="h-full text-center">
-                                    <img
-                                        alt="testimonial"
-                                        className="testimonial-avatar w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100"
-                                        src="https://dummyimage.com/302x302"
-                                    />
-                                    <p className="testimonial-text leading-relaxed">
-                                        Fintel Solutions has been instrumental in streamlining our compliance process. Their team is professional, responsive, and truly understands startups. We trust them completely with our financial operations.
-                                    </p>
-                                    <span className="inline-block h-1 w-10 rounded bg-blue-500 mt-6 mb-4"></span>
-                                    <h2 className="testimonial-name text-gray-900 font-medium title-font tracking-wider text-sm">Ravi Sharma
-                                    </h2>
-                                    <p className="testimonial-role text-gray-500">Founder, StartupNest</p>
+
+                        <div className="relative grid max-w-lg grid-cols-1 gap-6 mx-auto md:max-w-none lg:gap-10 md:grid-cols-3">
+                            <div className="flex flex-col overflow-hidden shadow-xl">
+                                <div className="flex flex-col justify-between flex-1 p-6 bg-white lg:py-8 lg:px-7">
+                                    <div className="flex-1">
+                                        <div className="flex items-center">
+                                            <svg className="w-5 h-5 text-[#FDB241]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                                <path
+                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                                />
+                                            </svg>
+                                            <svg className="w-5 h-5 text-[#FDB241]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                                <path
+                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                                />
+                                            </svg>
+                                            <svg className="w-5 h-5 text-[#FDB241]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                                <path
+                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                                />
+                                            </svg>
+                                            <svg className="w-5 h-5 text-[#FDB241]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                                <path
+                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                                />
+                                            </svg>
+                                            <svg className="w-5 h-5 text-[#FDB241]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                                <path
+                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                                />
+                                            </svg>
+                                        </div>
+
+                                        <blockquote className="flex-1 mt-8">
+                                            <p className="text-lg leading-relaxed text-gray-900 font-pj">“You made it so simple. My new site is so much faster and easier to work with than my old site. I just choose the page, make the change.”</p>
+                                        </blockquote>
+                                    </div>
+
+                                    <div className="flex items-center mt-8">
+                                        <img className="flex-shrink-0 object-cover rounded-full w-11 h-11" src="https://cdn.rareblocks.xyz/collection/clarity/images/testimonial/4/avatar-male-1.png" alt="" />
+                                        <div className="ml-4">
+                                            <p className="text-base font-bold text-gray-900 font-pj">Leslie Alexander</p>
+                                            <p className="mt-0.5 text-sm font-pj text-gray-600">Freelance React Developer</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div className="testimonial-card lg:w-[380px] lg:mb-0 mb-6 p-4">
-                                <div className="h-full text-center">
-                                    <img
-                                        alt="testimonial"
-                                        className="testimonial-avatar w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100"
-                                        src="https://dummyimage.com/300x300"
-                                    />
-                                    <p className="testimonial-text leading-relaxed">
-                                        Working with Fintel has been a game-changer. Their customized financial strategies and deep insights helped us scale efficiently while staying fully compliant. Highly recommend their services.
-                                    </p>
-                                    <span className="testimonial-name inline-block h-1 w-10 rounded bg-blue-500 mt-6 mb-4"></span>
-                                    <h2 className="testimonial-name text-gray-900 font-medium title-font tracking-wider text-sm">Neha Rao
-                                    </h2>
-                                    <p className="testimonial-role text-gray-500">Director, BloomWell Enterprises
-                                    </p>
+
+                            <div className="flex flex-col overflow-hidden shadow-xl">
+                                <div className="flex flex-col justify-between flex-1 p-6 bg-white lg:py-8 lg:px-7">
+                                    <div className="flex-1">
+                                        <div className="flex items-center">
+                                            <svg className="w-5 h-5 text-[#FDB241]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                                <path
+                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                                />
+                                            </svg>
+                                            <svg className="w-5 h-5 text-[#FDB241]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                                <path
+                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                                />
+                                            </svg>
+                                            <svg className="w-5 h-5 text-[#FDB241]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                                <path
+                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                                />
+                                            </svg>
+                                            <svg className="w-5 h-5 text-[#FDB241]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                                <path
+                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                                />
+                                            </svg>
+                                            <svg className="w-5 h-5 text-[#FDB241]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                                <path
+                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                                />
+                                            </svg>
+                                        </div>
+
+                                        <blockquote className="flex-1 mt-8">
+                                            <p className="text-lg leading-relaxed text-gray-900 font-pj">“Simply the best. Better than all the rest. I’d recommend this product to beginners and advanced users.”</p>
+                                        </blockquote>
+                                    </div>
+
+                                    <div className="flex items-center mt-8">
+                                        <img className="flex-shrink-0 object-cover rounded-full w-11 h-11" src="https://cdn.rareblocks.xyz/collection/clarity/images/testimonial/4/avatar-male-2.png" alt="" />
+                                        <div className="ml-4">
+                                            <p className="text-base font-bold text-gray-900 font-pj">Jacob Jones</p>
+                                            <p className="mt-0.5 text-sm font-pj text-gray-600">Digital Marketer</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div className="testimonial-card lg:w-[380px] lg:mb-0 p-4">
-                                <div className="h-full text-center">
-                                    <img
-                                        alt="testimonial"
-                                        className="testimonial-avatar w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100"
-                                        src="https://dummyimage.com/305x305"
-                                    />
-                                    <p className="testimonial-text leading-relaxed">
-                                        Exceptional service and unmatched dedication! Fintel’s team goes beyond consulting—they partner with you. Their ethical approach and strategic guidance brought immense value to our business journey.
-                                    </p>
-                                    <span className="inline-block h-1 w-10 rounded bg-blue-500 mt-6 mb-4"></span>
-                                    <h2 className="testimonial-name text-gray-900 font-medium title-font tracking-wider text-sm">Arjun Menon
-                                    </h2>
-                                    <p className="testimonial-role text-gray-500">CEO, Quantix Technologies
-                                    </p>
+
+                            <div className="flex flex-col overflow-hidden shadow-xl">
+                                <div className="flex flex-col justify-between flex-1 p-6 bg-white lg:py-8 lg:px-7">
+                                    <div className="flex-1">
+                                        <div className="flex items-center">
+                                            <svg className="w-5 h-5 text-[#FDB241]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                                <path
+                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                                />
+                                            </svg>
+                                            <svg className="w-5 h-5 text-[#FDB241]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                                <path
+                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                                />
+                                            </svg>
+                                            <svg className="w-5 h-5 text-[#FDB241]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                                <path
+                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                                />
+                                            </svg>
+                                            <svg className="w-5 h-5 text-[#FDB241]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                                <path
+                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                                />
+                                            </svg>
+                                            <svg className="w-5 h-5 text-[#FDB241]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                                <path
+                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                                />
+                                            </svg>
+                                        </div>
+
+                                        <blockquote className="flex-1 mt-8">
+                                            <p className="text-lg leading-relaxed text-gray-900 font-pj">“I cannot believe that I have got a brand new landing page after getting Omega. It was super easy to edit and publish.”</p>
+                                        </blockquote>
+                                    </div>
+
+                                    <div className="flex items-center mt-8">
+                                        <img className="flex-shrink-0 object-cover rounded-full w-11 h-11" src="https://cdn.rareblocks.xyz/collection/clarity/images/testimonial/4/avatar-female.png" alt="" />
+                                        <div className="ml-4">
+                                            <p className="text-base font-bold text-gray-900 font-pj">Jenny Wilson</p>
+                                            <p className="mt-0.5 text-sm font-pj text-gray-600">Graphic Designer</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </section>
-
+                </div>
             </div>
-        </motion.div>
+        </section >
+
     )
 }
-
-export default Testimonials
+export default ComponentName;
