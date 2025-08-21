@@ -7,7 +7,7 @@ const MinimalFooter = () => {
       {/* Logo */}
       <div className="text-2xl font-bold mb-6">
         <span className="text-pink-500">/</span>
-        <span className="tracking-wide">RAREBLOCKS</span>
+        <span className="tracking-wide">Fintel Solutions</span>
       </div>
 
       {/* Navigation Links */}

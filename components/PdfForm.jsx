@@ -1,0 +1,195 @@
+"use client";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
+export default function PdfForm({ pdfName, onClose }) {
+  const [form, setForm] = useState({ name: "", email: "", phone: "" });
+  const [errors, setErrors] = useState({});
+  const [status, setStatus] = useState("");
+
+  // Regex validators
+  const nameRegex = /^[A-Za-z\s]+$/;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const phoneRegex = /^[0-9]{10}$/;
+
+  const validate = () => {
+    let newErrors = {};
+
+    if (!form.name.trim()) {
+      newErrors.name = "Name is required.";
+    } else if (!nameRegex.test(form.name)) {
+      newErrors.name = "Only letters and spaces are allowed.";
+    }
+
+    if (!form.email.trim()) {
+      newErrors.email = "Email is required.";
+    } else if (!emailRegex.test(form.email)) {
+      newErrors.email = "Enter a valid email address.";
+    }
+
+    if (!form.phone.trim()) {
+      newErrors.phone = "Phone number is required.";
+    } else if (!phoneRegex.test(form.phone)) {
+      newErrors.phone = "Enter a valid 10-digit number.";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+    setErrors({ ...errors, [e.target.name]: "" }); // clear error on typing
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("");
+
+    if (!validate()) return; // stop if validation fails
+
+    setStatus("Sending...");
+
+    try {
+      // Send PDF to user
+      const resPdf = await fetch("/api/send-pdf", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...form, pdfName }),
+      });
+
+      // Send form details to admin
+      const resForm = await fetch("/api/send-form", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...form, pdfName }),
+      });
+
+      const pdfData = await resPdf.json();
+      const formData = await resForm.json();
+
+      if (pdfData.success && formData.success) {
+        setStatus("✅ PDF sent successfully!");
+        setForm({ name: "", email: "", phone: "" }); // reset form
+      } else {
+        setStatus("❌ Something went wrong. Try again.");
+      }
+    } catch (error) {
+      console.error("Submit Error:", error);
+      setStatus("❌ Failed to send. Try again.");
+    }
+  };
+
+  return (
+    <AnimatePresence>
+      <motion.div
+        className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 backdrop-blur-sm z-50"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+      >
+        <motion.div
+          className="bg-white rounded-2xl shadow-2xl w-full max-w-md p-6 relative"
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          exit={{ scale: 0.8, opacity: 0 }}
+          transition={{ duration: 0.2 }}
+        >
+          {/* Close Button */}
+          <button
+            onClick={onClose}
+            className="absolute top-3 right-3 text-gray-400 hover:text-gray-600 transition text-lg"
+          >
+            ✕
+          </button>
+
+          {/* Title */}
+          <h3 className="text-2xl font-bold mb-2 text-gray-800">
+            Get <span className="text-blue-600">{pdfName}</span>
+          </h3>
+          <p className="text-gray-500 mb-4">
+            Fill out the form and we’ll email you the PDF instantly.
+          </p>
+
+          {/* Form */}
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div>
+              <input
+                type="text"
+                name="name"
+                value={form.name}
+                placeholder="Full Name"
+                className={`border rounded-lg p-3 w-full outline-none transition ${
+                  errors.name
+                    ? "border-red-400 focus:ring-2 focus:ring-red-500"
+                    : "border-gray-300 focus:ring-2 focus:ring-blue-500"
+                }`}
+                onChange={handleChange}
+              />
+              {errors.name && (
+                <p className="text-red-500 text-xs mt-1">{errors.name}</p>
+              )}
+            </div>
+
+            <div>
+              <input
+                type="email"
+                name="email"
+                value={form.email}
+                placeholder="Email Address"
+                className={`border rounded-lg p-3 w-full outline-none transition ${
+                  errors.email
+                    ? "border-red-400 focus:ring-2 focus:ring-red-500"
+                    : "border-gray-300 focus:ring-2 focus:ring-blue-500"
+                }`}
+                onChange={handleChange}
+              />
+              {errors.email && (
+                <p className="text-red-500 text-xs mt-1">{errors.email}</p>
+              )}
+            </div>
+
+            <div>
+              <input
+                type="tel"
+                name="phone"
+                value={form.phone}
+                placeholder="Phone Number"
+                maxLength={10}
+                className={`border rounded-lg p-3 w-full outline-none transition ${
+                  errors.phone
+                    ? "border-red-400 focus:ring-2 focus:ring-red-500"
+                    : "border-gray-300 focus:ring-2 focus:ring-blue-500"
+                }`}
+                onChange={handleChange}
+              />
+              {errors.phone && (
+                <p className="text-red-500 text-xs mt-1">{errors.phone}</p>
+              )}
+            </div>
+
+            <button
+              type="submit"
+              className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 active:scale-95 transition"
+            >
+              📩 Send PDF
+            </button>
+          </form>
+
+          {/* Status Message */}
+          {status && (
+            <motion.p
+              className={`mt-4 text-center text-sm font-medium ${
+                status.includes("✅") ? "text-green-600" : "text-red-500"
+              }`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+            >
+              {status}
+            </motion.p>
+          )}
+        </motion.div>
+      </motion.div>
+    </AnimatePresence>
+  );
+}

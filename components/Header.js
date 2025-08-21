@@ -54,9 +54,10 @@ const Header = () => {
                         </div>
 
                         <div className="hidden lg:flex lg:ml-16 lg:items-center lg:justify-center lg:space-x-10 xl:space-x-16">
-                            <a href="#" className="text-base font-medium text-gray-900 hover:text-opacity-50">About Us</a>
+                            <a href="/AboutUs/ourculture" className="text-base font-medium text-gray-900 hover:text-opacity-50">About Us</a>
                             <a href="#" className="text-base font-medium text-gray-900 hover:text-opacity-50">Services</a>
                             <a href="#" className="text-base font-medium text-gray-900 hover:text-opacity-50">Contact</a>
+                            <a href="/Infozone" className="text-base font-medium text-gray-900 hover:text-opacity-50">InfoZone</a> {/* ✅ Added */}
                         </div>
 
                         <div className="hidden lg:ml-auto lg:flex lg:items-center lg:space-x-10">
@@ -76,6 +77,7 @@ const Header = () => {
                                     <a href="#" className="text-base font-medium text-gray-900 hover:bg-gray-100 p-3 rounded-xl">Pricing</a>
                                     <a href="#" className="text-base font-medium text-gray-900 hover:bg-gray-100 p-3 rounded-xl">Automation</a>
                                     <a href="#" className="text-base font-medium text-gray-900 hover:bg-gray-100 p-3 rounded-xl">Customer Login</a>
+                                    <a href="/Infozone" className="text-base font-medium text-gray-900 hover:bg-gray-100 p-3 rounded-xl">InfoZone</a> {/* ✅ Added */}
                                     <a href="#" className="inline-flex items-center justify-center px-6 py-3 text-base font-bold text-white bg-gray-900 rounded-xl hover:bg-gray-600">
                                         Sign up
                                     </a>
