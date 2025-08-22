@@ -3,7 +3,7 @@ import { FaTwitter, FaFacebookF, FaInstagram, FaGithub } from "react-icons/fa";
 
 const MinimalFooter = () => {
   return (
-    <footer className="bg-white text-center py-10">
+    <footer className="bg-gray-50 text-center py-10 ">
       {/* Logo */}
       <div className="text-2xl font-bold mb-6">
         <span className="text-pink-500">/</span>
@@ -11,16 +11,17 @@ const MinimalFooter = () => {
       </div>
 
       {/* Navigation Links */}
-      <nav className="flex justify-center space-x-8 mb-6">
-        {["About", "Features", "Works", "Support", "Help"].map((item, i) => (
-          <a
-            key={i}
-            href="#"
-            className="text-gray-800 text-base font-medium hover:text-gray-500 transition"
-          >
-            {item}
-          </a>
-        ))}
+      <nav className="flex justify-center space-x-6 mb-6">
+        {
+          [{ title: "About", route: "AboutUs/whoweare" }, { title: "Services", route: "#" }, { title: "Contact", route: "/contact" }, { title: "InfoZone", route: "Infozone" }].map((item, i) => (
+            <a
+              key={i}
+              href={item.route}
+              className="text-gray-800 text-base font-medium hover:text-gray-500 transition"
+            >
+              {item.title}
+            </a>
+          ))}
       </nav>
 
       {/* Decorative Divider */}
@@ -31,7 +32,6 @@ const MinimalFooter = () => {
         <a href="#"><FaTwitter /></a>
         <a href="#"><FaFacebookF /></a>
         <a href="#"><FaInstagram /></a>
-        <a href="#"><FaGithub /></a>
       </div>
 
       {/* Copyright */}

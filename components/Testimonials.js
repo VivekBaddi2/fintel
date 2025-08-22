@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 
 const ComponentName = () => {
     return (
-        <section className="py-12 bg-[#f9fafb] sm:py-16 lg:py-20">
+        <section className="py-12 bg-gray-50 sm:py-16 lg:py-20 ">
             <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
                 <div className="flex flex-col items-center">
                     <div className="text-center">
-                        <p className="text-lg font-medium text-gray-600 font-pj">2,157 people have said how good Rareblocks</p>
+                        {/* <p className="text-lg font-medium text-gray-600 font-pj">2,157 people have said how good Rareblocks</p> */}
                         <h2 className="mt-4 text-3xl font-bold text-gray-900 sm:text-4xl xl:text-5xl font-pj">Our happy clients say about us</h2>
                     </div>
 
@@ -54,15 +54,15 @@ const ComponentName = () => {
                                         </div>
 
                                         <blockquote className="flex-1 mt-8">
-                                            <p className="text-lg leading-relaxed text-gray-900 font-pj">“You made it so simple. My new site is so much faster and easier to work with than my old site. I just choose the page, make the change.”</p>
+                                            <p className="text-lg leading-relaxed text-gray-900 font-pj">“Fintel Solutions has been a game-changer for our startup. Their expert team took care of all our taxation and compliance needs, allowing us to focus on scaling the business. The guidance we received was clear, practical, and trustworthy.”</p>
                                         </blockquote>
                                     </div>
 
                                     <div className="flex items-center mt-8">
                                         <img className="flex-shrink-0 object-cover rounded-full w-11 h-11" src="https://cdn.rareblocks.xyz/collection/clarity/images/testimonial/4/avatar-male-1.png" alt="" />
                                         <div className="ml-4">
-                                            <p className="text-base font-bold text-gray-900 font-pj">Leslie Alexander</p>
-                                            <p className="mt-0.5 text-sm font-pj text-gray-600">Freelance React Developer</p>
+                                            <p className="text-base font-bold text-gray-900 font-pj">Suresh Kumar</p>
+                                            <p className="mt-0.5 text-sm font-pj text-gray-600">Founder of InfiniTech Solutions</p>
                                         </div>
                                     </div>
                                 </div>
@@ -100,15 +100,15 @@ const ComponentName = () => {
                                         </div>
 
                                         <blockquote className="flex-1 mt-8">
-                                            <p className="text-lg leading-relaxed text-gray-900 font-pj">“Simply the best. Better than all the rest. I’d recommend this product to beginners and advanced users.”</p>
+                                            <p className="text-lg leading-relaxed text-gray-900 font-pj">“As a growing enterprise, we struggled with complex financial planning. Fintel not only simplified the process but also helped us optimize costs with their innovative solutions. Their professionalism and ethics truly set them apart.”</p>
                                         </blockquote>
                                     </div>
 
                                     <div className="flex items-center mt-8">
                                         <img className="flex-shrink-0 object-cover rounded-full w-11 h-11" src="https://cdn.rareblocks.xyz/collection/clarity/images/testimonial/4/avatar-male-2.png" alt="" />
                                         <div className="ml-4">
-                                            <p className="text-base font-bold text-gray-900 font-pj">Jacob Jones</p>
-                                            <p className="mt-0.5 text-sm font-pj text-gray-600">Digital Marketer</p>
+                                            <p className="text-base font-bold text-gray-900 font-pj">Lakshmi Narayanan</p>
+                                            <p className="mt-0.5 text-sm font-pj text-gray-600">Managing Partner at Narayanan & Co.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -146,15 +146,15 @@ const ComponentName = () => {
                                         </div>
 
                                         <blockquote className="flex-1 mt-8">
-                                            <p className="text-lg leading-relaxed text-gray-900 font-pj">“I cannot believe that I have got a brand new landing page after getting Omega. It was super easy to edit and publish.”</p>
+                                            <p className="text-lg leading-relaxed text-gray-900 font-pj">“Working with Fintel Solutions has given us confidence and peace of mind. Their client-first approach and timely support ensured we stayed compliant while maximizing returns. They are more than consultants; they are true partners.”</p>
                                         </blockquote>
                                     </div>
 
                                     <div className="flex items-center mt-8">
                                         <img className="flex-shrink-0 object-cover rounded-full w-11 h-11" src="https://cdn.rareblocks.xyz/collection/clarity/images/testimonial/4/avatar-female.png" alt="" />
                                         <div className="ml-4">
-                                            <p className="text-base font-bold text-gray-900 font-pj">Jenny Wilson</p>
-                                            <p className="mt-0.5 text-sm font-pj text-gray-600">Graphic Designer</p>
+                                            <p className="text-base font-bold text-gray-900 font-pj">Deepa Ramesh</p>
+                                            <p className="mt-0.5 text-sm font-pj text-gray-600">CEO of Southern Edge Ventures</p>
                                         </div>
                                     </div>
                                 </div>

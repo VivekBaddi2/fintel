@@ -2,30 +2,30 @@ import React from "react";
 
 const features = [
     {
-        title: "Predictive Insights",
+        title: "Expert Guidance",
         description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elifend nullam consectetur placerat pellentesque ut massa volutpat at. Diam pretium orci dui sagittis.",
+            "With a team of seasoned professionals from diverse fields, Fintel provides practical, research-driven advice. Our expertise ensures you get accurate taxation, finance, and compliance solutions customized to your business needs.",
         icon: "📊",
         highlight: false,
     },
     {
-        title: "Fastest Speed",
+        title: "Client-Centric Approach",
         description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elifend nullam consectetur placerat pellentesque ut massa volutpat at. Diam pretium orci dui sagittis.",
+            "We believe every business is unique. That’s why we focus on understanding your goals, challenges, and growth plans before designing solutions. This helps you concentrate on building your business while we handle the financial complexities.",
         icon: "⚙️",
         highlight: true,
     },
     {
-        title: "Filtered Data",
+        title: "Innovative Solutions",
         description:
-            "Elifend nullam consectetur placerat pellentesque ut massa volutpat at. Diam pretium orci dui sagittis. Norem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "We combine industry knowledge with modern technology to deliver cost-effective, efficient, and sustainable solutions. From taxation strategies to compliance management, our innovative approach ensures better results and long-term success.",
         icon: "🧊",
         highlight: false,
     },
     {
-        title: "Everything in Cloud",
+        title: "Trust & Ethics",
         description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elifend nullam consectetur placerat pellentesque ut massa volutpat bonur los.",
+            "At Fintel, relationships matter as much as results. Our work is rooted in transparency, long-term partnerships, and ethical practices, giving you the confidence to grow with a trusted advisor by your side.",
         icon: "☁️",
         highlight: false,
     },
@@ -36,7 +36,7 @@ const FeatureGrid = () => {
         <section className="bg-gray-50 py-20 px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center mb-12">
                 <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
-                    Take the next step without <br /> any hassle & get results fast
+                    Why Choose Fintel Solutions?
                 </h2>
             </div>
 

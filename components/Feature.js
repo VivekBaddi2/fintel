@@ -6,15 +6,15 @@ const ComponentName = () => {
             <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
                 <div className="text-center">
                     <h2 className="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl xl:text-5xl font-pj">
-                        Make every step user-centric
+                        Solutions That Drive Success
                     </h2>
                     <p className="mt-4 text-base leading-7 text-gray-600 sm:mt-8 font-pj">
-                        Lorem ipsum dolor sit amet, consectetur adipis elit
+                        Taxation, Finance & Compliance made simple
                     </p>
                 </div>
 
                 <div className="grid grid-cols-1 mt-10 text-center sm:mt-16 sm:grid-cols-2 sm:gap-x-12 gap-y-12 md:grid-cols-3 md:gap-0 xl:mt-24">
-                    
+
                     {/* Support */}
                     <div className="md:p-8 lg:p-14">
                         <svg className="mx-auto" width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -25,9 +25,9 @@ const ComponentName = () => {
                             <path d="M45 29H33V45H41C43.209 45 45 43.209 45 41V29Z"
                                 fill="#D4D4D8" stroke="#161616" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
-                        <h3 className="mt-12 text-xl font-bold text-gray-900 font-pj">Support</h3>
+                        <h3 className="mt-12 text-xl font-bold text-gray-900 font-pj">Taxation Services</h3>
                         <p className="mt-5 text-base text-gray-600 font-pj">
-                            Lorem ipsum dolor sit amet, consectetur adipis elit. Sit enim nec, proin faucibus nibh et sagittis a. Lacinia purus ac amet.
+                            End-to-end tax planning, filing, and advisory designed to keep your business compliant while optimizing savings. We ensure accuracy, timeliness, and clarity in every tax solution.
                         </p>
                     </div>
 
@@ -45,9 +45,9 @@ const ComponentName = () => {
                             <path d="M28 1H37V10"
                                 stroke="#161616" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
-                        <h3 className="mt-12 text-xl font-bold text-gray-900 font-pj">Sales</h3>
+                        <h3 className="mt-12 text-xl font-bold text-gray-900 font-pj">Financial Consulting</h3>
                         <p className="mt-5 text-base text-gray-600 font-pj">
-                            Lorem ipsum dolor sit amet, consectetur adipis elit. Sit enim nec, proin faucibus nibh et sagittis a. Lacinia purus ac amet.
+                            From budgeting and cash flow management to strategic financial planning, we help businesses make smarter decisions and maximize returns with cost-effective solutions.
                         </p>
                     </div>
 
@@ -63,9 +63,9 @@ const ComponentName = () => {
                             <path d="M35 7H24V35H35V7Z"
                                 fill="#D4D4D8" stroke="#161616" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
-                        <h3 className="mt-12 text-xl font-bold text-gray-900 font-pj">Onboarding</h3>
+                        <h3 className="mt-12 text-xl font-bold text-gray-900 font-pj">Compliance Management</h3>
                         <p className="mt-5 text-base text-gray-600 font-pj">
-                            Lorem ipsum dolor sit amet, consectetur adipis elit. Sit enim nec, proin faucibus nibh et sagittis a. Lacinia purus ac amet.
+                            Stay worry-free with our comprehensive compliance support. We handle regulatory requirements, documentation, and updates so your business stays on the right side of the law.
                         </p>
                     </div>
 
