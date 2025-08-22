@@ -3,8 +3,8 @@ import Link from 'next/link'
 
 const BreadCrumb = ({ items = [] }) => {
     return (
-        <div className='breadCrumbContainer h-10 w-fit bg-gray-50 rounded-4xl py-8 px-4 my-8'>
-            <nav className="breadCrumbNav h-full flex items-center justify-center text-gray-600 text-md" aria-label="Breadcrumb">
+        <div className='breadCrumbContainer h-10 w-fit bg-gray-200 rounded-4xl py-8 px-4 my-8'>
+            <nav className="breadCrumbNav h-full flex items-center justify-center text-gray-600 text-sm md:text-md" aria-label="Breadcrumb">
                 {items.map((item, idx) => (
                     <span key={item.href || item.label} className="flex items-center">
                         {idx > 0 && <span className="mx-6"> {''} </span>}

@@ -77,7 +77,7 @@ const Header = () => {
                                     <a href="#" className="text-base font-medium text-gray-900 hover:bg-gray-100 p-3 rounded-xl">Services</a>
                                     <a href="/contact" className="text-base font-medium text-gray-900 hover:bg-gray-100 p-3 rounded-xl">Contact</a>
                                     <a href="/Infozone" className="text-base font-medium text-gray-900 hover:bg-gray-100 p-3 rounded-xl">InfoZone</a>
-                                    <a href="/contact" className="inline-flex items-center justify-center px-6 py-3 text-base font-bold text-white bg-gray-900 rounded-xl hover:bg-gray-600">
+                                    <a href="/contact" className="inline-flex items-center justify-center px-6 py-3 text-base font-bold text-white bg-gray-900 rounded-xl hover:bg-gray-800">
                                         Get in touch
                                     </a>
                                 </div>

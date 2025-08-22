@@ -11,7 +11,7 @@ const page = () => {
             whileInView={{ opacity: 1, y: 0 }} // Animate to visible and normal position when in view
             transition={{ duration: 0.8, ease: "easeOut" }} // Transition properties
         >
-            <div className='container w-[90vw] mx-auto my-8 px-12'>
+            <div className='container w-[90vw] mx-auto my-8 md:px-12'>
                 <div className="content">
                     <BreadCrumb items={[
                         { label: 'Home', href: '/' },
