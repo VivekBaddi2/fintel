@@ -13,7 +13,7 @@ const Header = () => {
                 <div className="container px-4 mx-auto sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between">
                         <div className="flex-shrink-0">
-                            <a href="#" className="flex rounded outline-none focus:ring-1 focus:ring-gray-900 focus:ring-offset-2">
+                            <a href="/" className="flex rounded ">
                                 <img
                                     className="w-auto h-10"
                                     src="/fintel-logo.png"
@@ -54,16 +54,16 @@ const Header = () => {
                         </div>
 
                         <div className="hidden lg:flex lg:ml-16 lg:items-center lg:justify-center lg:space-x-10 xl:space-x-16">
-                            <a href="/AboutUs/ourculture" className="text-base font-medium text-gray-900 hover:text-opacity-50">About Us</a>
+                            <a href="/AboutUs/whoweare" className="text-base font-medium text-gray-900 hover:text-opacity-50">About Us</a>
                             <a href="#" className="text-base font-medium text-gray-900 hover:text-opacity-50">Services</a>
-                            <a href="#" className="text-base font-medium text-gray-900 hover:text-opacity-50">Contact</a>
+                            <a href="/contact" className="text-base font-medium text-gray-900 hover:text-opacity-50">Contact</a>
                             <a href="/Infozone" className="text-base font-medium text-gray-900 hover:text-opacity-50">InfoZone</a> {/* ✅ Added */}
                         </div>
 
                         <div className="hidden lg:ml-auto lg:flex lg:items-center lg:space-x-10">
-                            <a href="#" className="text-base font-medium text-gray-900 hover:text-opacity-50">Customer Login</a>
-                            <a href="#" className="inline-flex items-center justify-center px-6 py-3 text-base font-bold text-white bg-gray-900 rounded-xl hover:bg-gray-600">
-                                Sign up
+                            {/* <a href="#" className="text-base font-medium text-gray-900 hover:text-opacity-50">Customer Login</a> */}
+                            <a href="/contact" className="inline-flex items-center justify-center px-6 py-3 text-base font-bold text-white bg-gray-900 rounded-xl hover:bg-gray-800">
+                                Get in touch
                             </a>
                         </div>
                     </div>
@@ -73,13 +73,12 @@ const Header = () => {
                         <nav className="lg:hidden mt-4">
                             <div className="px-1 py-8">
                                 <div className="grid gap-y-7">
-                                    <a href="#" className="text-base font-medium text-gray-900 hover:bg-gray-100 p-3 rounded-xl">Features</a>
-                                    <a href="#" className="text-base font-medium text-gray-900 hover:bg-gray-100 p-3 rounded-xl">Pricing</a>
-                                    <a href="#" className="text-base font-medium text-gray-900 hover:bg-gray-100 p-3 rounded-xl">Automation</a>
-                                    <a href="#" className="text-base font-medium text-gray-900 hover:bg-gray-100 p-3 rounded-xl">Customer Login</a>
-                                    <a href="/Infozone" className="text-base font-medium text-gray-900 hover:bg-gray-100 p-3 rounded-xl">InfoZone</a> {/* ✅ Added */}
-                                    <a href="#" className="inline-flex items-center justify-center px-6 py-3 text-base font-bold text-white bg-gray-900 rounded-xl hover:bg-gray-600">
-                                        Sign up
+                                    <a href="/AboutUs/whoweare" className="text-base font-medium text-gray-900 hover:bg-gray-100 p-3 rounded-xl">About Us</a>
+                                    <a href="#" className="text-base font-medium text-gray-900 hover:bg-gray-100 p-3 rounded-xl">Services</a>
+                                    <a href="/contact" className="text-base font-medium text-gray-900 hover:bg-gray-100 p-3 rounded-xl">Contact</a>
+                                    <a href="/Infozone" className="text-base font-medium text-gray-900 hover:bg-gray-100 p-3 rounded-xl">InfoZone</a>
+                                    <a href="/contact" className="inline-flex items-center justify-center px-6 py-3 text-base font-bold text-white bg-gray-900 rounded-xl hover:bg-gray-600">
+                                        Get in touch
                                     </a>
                                 </div>
                             </div>

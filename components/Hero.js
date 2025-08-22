@@ -19,10 +19,10 @@ const ComponentName = () => {
                             </span>
                         </p>
 
-                        <div className="px-8 sm:items-center sm:justify-center sm:px-0 sm:space-x-5 sm:flex mt-9">
+                        <div className="px-8 sm:items-center sm:justify-center sm:px-0 sm:space-x-5 sm:flex mt-9 mb-4">
                             <a
-                                href="#"
-                                className="inline-flex items-center justify-center w-full px-8 py-3 text-lg font-bold text-white transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
+                                href="/contact"
+                                className="inline-flex items-center justify-center w-full px-8 py-3 text-lg font-bold text-white transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 "
                             >
                                 Get in Touch
                             </a>
@@ -30,9 +30,6 @@ const ComponentName = () => {
 
                         </div>
 
-                        <p className="mt-8 text-base text-gray-500 font-inter">
-                            60 Days free trial · No credit card required
-                        </p>
                     </div>
                     <div className="pb-12">
                         <div className="relative">
