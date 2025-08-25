@@ -1,14 +1,14 @@
 "use client"
 import React, { useState } from 'react'
-import Image from 'next/image'
-import { motion } from 'framer-motion'
-import Link from 'next/link'
+// import Image from 'next/image'
+// import { motion } from 'framer-motion'
+// import Link from 'next/link'
 
 const Header = () => {
     const [expanded, setExpanded] = useState(false);
 
     return (
-        <div className="overflow-x-hidden bg-gray-50">
+        <div className="overflow-x-hidden bg-gray-50 w-[90vw] mx-auto md:px-6">
             <header className="py-4 md:py-6">
                 <div className="container px-4 mx-auto sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between">
@@ -55,7 +55,7 @@ const Header = () => {
 
                         <div className="hidden lg:flex lg:ml-16 lg:items-center lg:justify-center lg:space-x-10 xl:space-x-16">
                             <a href="/AboutUs/whoweare" className="text-base font-medium text-gray-900 hover:text-opacity-50">About Us</a>
-                            <a href="#" className="text-base font-medium text-gray-900 hover:text-opacity-50">Services</a>
+                            <a href="/Services" className="text-base font-medium text-gray-900 hover:text-opacity-50">Services</a>
                             <a href="/contact" className="text-base font-medium text-gray-900 hover:text-opacity-50">Contact</a>
                             <a href="/Infozone" className="text-base font-medium text-gray-900 hover:text-opacity-50">InfoZone</a> {/* ✅ Added */}
                         </div>
@@ -74,7 +74,7 @@ const Header = () => {
                             <div className="px-1 py-8">
                                 <div className="grid gap-y-7">
                                     <a href="/AboutUs/whoweare" className="text-base font-medium text-gray-900 hover:bg-gray-100 p-3 rounded-xl">About Us</a>
-                                    <a href="#" className="text-base font-medium text-gray-900 hover:bg-gray-100 p-3 rounded-xl">Services</a>
+                                    <a href="/Services" className="text-base font-medium text-gray-900 hover:bg-gray-100 p-3 rounded-xl">Services</a>
                                     <a href="/contact" className="text-base font-medium text-gray-900 hover:bg-gray-100 p-3 rounded-xl">Contact</a>
                                     <a href="/Infozone" className="text-base font-medium text-gray-900 hover:bg-gray-100 p-3 rounded-xl">InfoZone</a>
                                     <a href="/contact" className="inline-flex items-center justify-center px-6 py-3 text-base font-bold text-white bg-gray-900 rounded-xl hover:bg-gray-800">
