@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from "framer-motion";
+import BreadCrumb from '@/components/BreadCrumb';
 
 const ServicesPage = () => {
     return (
@@ -11,7 +12,11 @@ const ServicesPage = () => {
             transition={{ duration: 0.8, ease: "easeOut" }} // Transition properties
         >
             <section className="text-gray-600 body-font w-[90vw] mx-auto md:px-12">
-                <div className="container px-5 py-12 mx-auto">
+                <div className="container px-5 mx-auto">
+                    <BreadCrumb items={[
+                        { label: 'Home', href: '/' },
+                        { label: 'Services' },
+                    ]} />
                     <div className="flex flex-col text-left w-full mb-10">
                         <h1 className="text-2xl md:text-xl font-medium text-gray-900">WHAT DO WE OFFER?</h1>
                         <p className="mt-4 text-justify">

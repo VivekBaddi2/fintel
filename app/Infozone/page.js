@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { FaFilePdf } from "react-icons/fa";
 import { motion } from "framer-motion";
 import PdfForm from "../../components/PdfForm";
+import BreadCrumb from "@/components/BreadCrumb";
 
 export default function PdfList() {
   const [selectedPdf, setSelectedPdf] = useState(null);
@@ -21,7 +22,11 @@ export default function PdfList() {
       whileInView={{ opacity: 1, y: 0 }} // Animate to visible and normal position when in view
       transition={{ duration: 0.8, ease: "easeOut" }} // Transition properties
     >
-      <div className="max-w-4xl mx-auto p-8">
+      <div className="w-[90vw] mx-auto my-8 md:px-20">
+        <BreadCrumb items={[
+          { label: 'Home', href: '/' },
+          { label: 'Infozone' },
+        ]} />
         <h2 className="text-4xl font-extrabold mb-8 text-gray-800">
           📚 Infozone – Available PDFs
         </h2>

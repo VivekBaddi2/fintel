@@ -53,7 +53,7 @@ const Header = () => {
                             </button>
                         </div>
 
-                        <div className="hidden lg:flex lg:ml-16 lg:items-center lg:justify-center lg:space-x-10 xl:space-x-16">
+                        <div className="hidden lg:flex lg:ml-2 lg:items-center lg:justify-center lg:space-x-10 xl:space-x-16 xl:ml-16">
                             <a href="/" className="text-base font-medium text-gray-900 hover:text-opacity-50">Home</a>
                             <a href="/AboutUs/whoweare" className="text-base font-medium text-gray-900 hover:text-opacity-50">About Us</a>
                             <a href="/Services" className="text-base font-medium text-gray-900 hover:text-opacity-50">Services</a>
