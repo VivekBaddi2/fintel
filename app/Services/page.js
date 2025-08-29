@@ -5,7 +5,7 @@ const ServicesPage = () => {
         <section className="text-gray-600 body-font w-[90vw] mx-auto md:px-12">
             <div className="container px-5 py-12 mx-auto">
                 <div className="flex flex-col text-left w-full mb-10">
-                    <h1 className="sm:text-3xl text-2xl font-medium title-font text-gray-900">WHAT DO WE OFFER?</h1>
+                    <h1 className="text-2xl md:text-xl font-medium text-gray-900">WHAT DO WE OFFER?</h1>
                     <p className="mt-4 text-justify">
                         Fintel Solutions delivers a full range of Taxation, Compliance and Management Consultancy Services. We are first generation professionals with extensive skills and industry expertise, providing cost-effective financial solutions.
 
