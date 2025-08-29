@@ -54,6 +54,7 @@ const Header = () => {
                         </div>
 
                         <div className="hidden lg:flex lg:ml-16 lg:items-center lg:justify-center lg:space-x-10 xl:space-x-16">
+                            <a href="/" className="text-base font-medium text-gray-900 hover:text-opacity-50">Home</a>
                             <a href="/AboutUs/whoweare" className="text-base font-medium text-gray-900 hover:text-opacity-50">About Us</a>
                             <a href="/Services" className="text-base font-medium text-gray-900 hover:text-opacity-50">Services</a>
                             <a href="/contact" className="text-base font-medium text-gray-900 hover:text-opacity-50">Contact</a>
@@ -73,6 +74,7 @@ const Header = () => {
                         <nav className="lg:hidden mt-4">
                             <div className="px-1 py-8">
                                 <div className="grid gap-y-7">
+                                    <a href="/" className="text-base font-medium text-gray-900 hover:bg-gray-100 p-3 rounded-xl">Home</a>
                                     <a href="/AboutUs/whoweare" className="text-base font-medium text-gray-900 hover:bg-gray-100 p-3 rounded-xl">About Us</a>
                                     <a href="/Services" className="text-base font-medium text-gray-900 hover:bg-gray-100 p-3 rounded-xl">Services</a>
                                     <a href="/contact" className="text-base font-medium text-gray-900 hover:bg-gray-100 p-3 rounded-xl">Contact</a>

@@ -67,8 +67,8 @@ const ContactSection = () => {
                         Submit
                     </button>
                     <div className='flex gap-8 w-fit mx-auto mt-8'>
-                        <a href="" className='text-gray-500 hover:text-gray-900'>Facebook</a>
-                        <a href="" className='text-gray-500 hover:text-gray-900'>Twitter (X)</a>
+                        <a href="https://www.facebook.com/fintelsolutions" className='text-gray-500 hover:text-gray-900'>Facebook</a>
+                        <a href="https://x.com/finteltweets" className='text-gray-500 hover:text-gray-900'>Twitter (X)</a>
                     </div>
                 </div>
             </div>

@@ -13,7 +13,7 @@ const MinimalFooter = () => {
       {/* Navigation Links */}
       <nav className="flex justify-center space-x-6 mb-6">
         {
-          [{ title: "About", route: "AboutUs/whoweare" }, { title: "Services", route: "#" }, { title: "Contact", route: "/contact" }, { title: "InfoZone", route: "Infozone" }].map((item, i) => (
+          [{ title: "Home", route: "/" }, { title: "About", route: "AboutUs/whoweare" }, { title: "Services", route: "/Services" }, { title: "Contact", route: "/contact" }, { title: "InfoZone", route: "Infozone" }].map((item, i) => (
             <a
               key={i}
               href={item.route}
@@ -29,8 +29,8 @@ const MinimalFooter = () => {
 
       {/* Social Icons */}
       <div className="flex justify-center space-x-6 text-gray-700 text-xl mb-6">
-        <a href="#"><FaTwitter /></a>
-        <a href="#"><FaFacebookF /></a>
+        <a href="https://x.com/finteltweets"><FaTwitter /></a>
+        <a href="https://www.facebook.com/fintelsolutions"><FaFacebookF /></a>
         <a href="#"><FaInstagram /></a>
       </div>
 
