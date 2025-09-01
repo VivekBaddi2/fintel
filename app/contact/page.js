@@ -27,7 +27,7 @@ const ContactSection = () => {
                                 marginWidth="0"
                                 scrolling="no"
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3847.214458023007!2d75.12078947512131!3d15.364867485217095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb8d0c5aaaaaaad%3A0x9a29af814ca1a803!2sFintel%20Solutions%20Pvt%20Ltd.!5e0!3m2!1sen!2sin!4v1756099613010!5m2!1sen!2sin"
-                                style={{ filter: 'grayscale(1) contrast(1.2) opacity(0.4)' }}
+                                style={{ filter: 'contrast(1.2) opacity(0.7)' }}
                             ></iframe>
 
                             <div className="bg-white relative flex flex-wrap py-6 rounded shadow-md">
