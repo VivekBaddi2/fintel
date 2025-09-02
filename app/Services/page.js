@@ -31,31 +31,43 @@ const ServicesPage = () => {
                     <div className="flex flex-wrap -m-4">
                         {[
                             {
+                                id: 1,
+                                slug: 'strategic-consulting',
                                 title: 'Strategic Consulting',
                                 description:
                                     'Business strategy is a long term plan of action designed to achieve a particular goal or set of goals or objectives. We at Fintel assist you in tactically planning and matching your strengths with the available opportunities and beyond.',
                             },
                             {
+                                id: "2",
+                                slug: "assurance-service",
                                 title: 'Assurance Service',
                                 description:
                                     'Assurance has grown beyond the finance function and encompasses other functions like HR, legal etc. Fintel possesses the necessary proficiency to carry out complex audits and reviews related to HR, finance, legal.',
                             },
                             {
+                                id: "3",
+                                slug: "human-resource-service",
                                 title: 'Human Resource Service',
                                 description:
                                     'The ability to attract, retain and nurture talent is increasingly becoming a source of competitive advantage for business. Accordingly, the HR objectives of any company need to align with the aspirations of employees as well as the business.',
                             },
                             {
+                                id: "4",
+                                slug: "compliance-management",
                                 title: 'Compliance Management',
                                 description:
                                     "Compliance's management is a critical component of the internal control process for any business and a prerequisite for assessing corporate governance standards. Management is thus a specialized responsibility.",
                             },
                             {
+                                id: "5",
+                                slug: "payroll-service",
                                 title: 'Payroll Service',
                                 description:
                                     'As a business owner one needs to know the real & accurate financial data of the business with zero distortions. We provide accounting management solutions so as to ensure the accounts reflect the true & correct position of the business.',
                             },
                             {
+                                id: "6",
+                                slug: "MIS-360",
                                 title: 'MIS 360',
                                 description:
                                     'A management information system (MIS) provides information needed to manage organizations efficiently by transforming data into useful information for better decision making.',
@@ -81,6 +93,11 @@ const ServicesPage = () => {
                                     </div>
                                     <div className="flex-grow">
                                         <p className="leading-relaxed text-base">{service.description}</p>
+                                    </div>
+                                    <div className='mt-4'>
+                                        <a href={`/Services/${service.id}/${service.slug}`}>
+                                            <button className='bg-gray-900 px-4 py-2 text-white font-semibold cursor-pointer rounded-lg hover:bg-gray-800'>Read more</button>
+                                        </a>
                                     </div>
                                 </div>
                             </div>

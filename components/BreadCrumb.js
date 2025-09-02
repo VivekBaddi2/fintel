@@ -10,7 +10,7 @@ const BreadCrumb = ({ items = [] }) => {
                         {item.href ? (
                             <a href={item.href} className="hover:text-gray-800 font-medium">{item.label}</a>
                         ) : (
-                            <span className="w-fit my-1 py-2 px-3 rounded-3xl bg-gray-900 font-semibold text-gray-50">{item.label}</span>
+                            <span className="w-fit my-1 py-3 px-3 rounded-3xl bg-gray-900 font-semibold text-gray-50">{item.label}</span>
                         )}
                     </span>
                 ))}
