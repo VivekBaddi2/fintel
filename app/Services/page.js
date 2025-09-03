@@ -73,7 +73,7 @@ const ServicesPage = () => {
                                     'A management information system (MIS) provides information needed to manage organizations efficiently by transforming data into useful information for better decision making.',
                             },
                         ].map((service, index) => (
-                            <div key={index} className="p-4 md:w-1/3">
+                            <div key={index} className="p-4 w-fit lg:w-1/3">
                                 <div className="flex rounded-lg h-full bg-gray-100 p-8 flex-col">
                                     <div className="flex items-center mb-3">
                                         <div className="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-black text-white flex-shrink-0">
