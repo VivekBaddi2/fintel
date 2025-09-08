@@ -1,8 +1,5 @@
-"use client"
+'use client'
 import React, { useState } from 'react'
-// import Image from 'next/image'
-// import { motion } from 'framer-motion'
-// import Link from 'next/link'
 
 const Header = () => {
     const [expanded, setExpanded] = useState(false);
@@ -12,6 +9,7 @@ const Header = () => {
             <header className="py-4 md:py-6">
                 <div className="container px-4 mx-auto sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between">
+                        {/* Logo */}
                         <div className="flex-shrink-0">
                             <a href="/" className="flex rounded ">
                                 <img
@@ -22,6 +20,7 @@ const Header = () => {
                             </a>
                         </div>
 
+                        {/* Mobile menu button */}
                         <div className="flex lg:hidden">
                             <button
                                 type="button"
@@ -53,16 +52,18 @@ const Header = () => {
                             </button>
                         </div>
 
+                        {/* Desktop menu */}
                         <div className="hidden lg:flex lg:ml-2 lg:items-center lg:justify-center lg:space-x-10 xl:space-x-16 xl:ml-16">
                             <a href="/" className="text-base font-medium text-gray-900 hover:text-opacity-50">Home</a>
                             <a href="/AboutUs/whoweare" className="text-base font-medium text-gray-900 hover:text-opacity-50">About Us</a>
                             <a href="/Services" className="text-base font-medium text-gray-900 hover:text-opacity-50">Services</a>
                             <a href="/contact" className="text-base font-medium text-gray-900 hover:text-opacity-50">Contact</a>
-                            <a href="/Infozone" className="text-base font-medium text-gray-900 hover:text-opacity-50">InfoZone</a> {/* ✅ Added */}
+                            <a href="/Infozone" className="text-base font-medium text-gray-900 hover:text-opacity-50">InfoZone</a>
+                            <a href="/Blogs" className="text-base font-medium text-gray-900 hover:text-opacity-50">Blogs</a> {/* ✅ Added Blogs */}
                         </div>
 
+                        {/* CTA button */}
                         <div className="hidden lg:ml-auto lg:flex lg:items-center lg:space-x-10">
-                            {/* <a href="#" className="text-base font-medium text-gray-900 hover:text-opacity-50">Customer Login</a> */}
                             <a href="/contact" className="inline-flex items-center justify-center px-6 py-3 text-base font-bold text-white bg-gray-900 rounded-xl hover:bg-gray-800">
                                 Get in touch
                             </a>
@@ -79,6 +80,7 @@ const Header = () => {
                                     <a href="/Services" className="text-base font-medium text-gray-900 hover:bg-gray-100 p-3 rounded-xl">Services</a>
                                     <a href="/contact" className="text-base font-medium text-gray-900 hover:bg-gray-100 p-3 rounded-xl">Contact</a>
                                     <a href="/Infozone" className="text-base font-medium text-gray-900 hover:bg-gray-100 p-3 rounded-xl">InfoZone</a>
+                                    <a href="/Blogs" className="text-base font-medium text-gray-900 hover:bg-gray-100 p-3 rounded-xl">Blogs</a> {/* ✅ Added Blogs */}
                                     <a href="/contact" className="inline-flex items-center justify-center px-6 py-3 text-base font-bold text-white bg-gray-900 rounded-xl hover:bg-gray-800">
                                         Get in touch
                                     </a>
@@ -89,7 +91,6 @@ const Header = () => {
                 </div>
             </header>
         </div>
-
     )
 }
 
