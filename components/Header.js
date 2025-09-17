@@ -59,7 +59,7 @@ const Header = () => {
                             <a href="/Services" className="text-base font-medium text-gray-900 hover:text-opacity-50">Services</a>
                             <a href="/contact" className="text-base font-medium text-gray-900 hover:text-opacity-50">Contact</a>
                             <a href="/Infozone" className="text-base font-medium text-gray-900 hover:text-opacity-50">InfoZone</a>
-                            <a href="/Blogs" className="text-base font-medium text-gray-900 hover:text-opacity-50">Blogs</a> {/* ✅ Added Blogs */}
+                            <a href="/Blogs" className="text-base font-medium text-gray-900 hover:text-opacity-50">Blog</a> {/* ✅ Added Blogs */}
                         </div>
 
                         {/* CTA button */}
@@ -80,7 +80,7 @@ const Header = () => {
                                     <a href="/Services" className="text-base font-medium text-gray-900 hover:bg-gray-100 p-3 rounded-xl">Services</a>
                                     <a href="/contact" className="text-base font-medium text-gray-900 hover:bg-gray-100 p-3 rounded-xl">Contact</a>
                                     <a href="/Infozone" className="text-base font-medium text-gray-900 hover:bg-gray-100 p-3 rounded-xl">InfoZone</a>
-                                    <a href="/Blogs" className="text-base font-medium text-gray-900 hover:bg-gray-100 p-3 rounded-xl">Blogs</a> {/* ✅ Added Blogs */}
+                                    <a href="/Blogs" className="text-base font-medium text-gray-900 hover:bg-gray-100 p-3 rounded-xl">Blog</a> {/* ✅ Added Blogs */}
                                     <a href="/contact" className="inline-flex items-center justify-center px-6 py-3 text-base font-bold text-white bg-gray-900 rounded-xl hover:bg-gray-800">
                                         Get in touch
                                     </a>

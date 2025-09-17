@@ -1,0 +1,45 @@
+import React from "react";
+import { FaTwitter, FaFacebookF, FaInstagram, FaGithub } from "react-icons/fa";
+
+const AdminFoot = () => {
+    return (
+        <footer className="bg-gray-50 text-center py-10 ">
+            {/* Logo */}
+            <div className="text-2xl font-bold mb-6">
+                <span className="text-pink-500">/</span>
+                <span className="tracking-wide">Fintel Solutions</span>
+            </div>
+
+            {/* Navigation Links */}
+            <nav className="flex justify-center space-x-6 mb-6">
+                {
+                    [{ title: "Home", route: "/" }, { title: "About", route: "AboutUs/whoweare" }, { title: "Services", route: "/Services" }, { title: "Contact", route: "/contact" }, { title: "InfoZone", route: "Infozone" }].map((item, i) => (
+                        <a
+                            key={i}
+                            href={item.route}
+                            className="text-gray-800 text-base font-medium hover:text-gray-500 transition"
+                        >
+                            {item.title}
+                        </a>
+                    ))}
+            </nav>
+
+            {/* Decorative Divider */}
+            <div className="w-40 h-px mx-auto bg-gradient-to-r from-gray-300 via-gray-400 to-gray-300 mb-6 opacity-50" />
+
+            {/* Social Icons */}
+            <div className="flex justify-center space-x-6 text-gray-700 text-xl mb-6">
+                <a href="https://x.com/finteltweets"><FaTwitter /></a>
+                <a href="https://www.facebook.com/fintelsolutions"><FaFacebookF /></a>
+                <a href="#"><FaInstagram /></a>
+            </div>
+
+            {/* Copyright */}
+            <p className="text-sm text-gray-500">
+                © Copyright {new Date().getFullYear()}, All Rights Reserved
+            </p>
+        </footer>
+    );
+};
+
+export default AdminFoot;
