@@ -28,7 +28,7 @@ const page = () => {
         loggedinUser.map((user) => {
             setId(user._id);
         });
-       
+
 
     }
 
@@ -47,11 +47,11 @@ const page = () => {
 
                 const data = await res.json();
                 console.log("Data is :", data);
-                setMessage("User details successfully edited!");
+                setMessage("Admin details successfully edited!");
             }
             catch (err) {
                 console.log(err);
-                setMessage("Failed to edit user details.");
+                setMessage("Failed to edit admin details.");
             }
 
         }
@@ -72,11 +72,11 @@ const page = () => {
                 const data = await res.json();
                 console.log("Data is :", data);
                 logoutSession();
-                setMessage("User successfully deleted!");
+                setMessage("Admin successfully deleted!");
             }
             catch (err) {
                 console.log(err);
-                setMessage("Failed to delete user.");
+                setMessage("Failed to delete admin.");
             }
 
         }
@@ -107,10 +107,10 @@ const page = () => {
             <section className='w-[80vw] mx-auto px-2'>
                 <h1 className='text-xl md:text-2xl  mb-4 font-semibold'>Change username or password</h1>
                 <form onSubmit={handleSubmit} className='flex flex-col mb-8 gap-4'>
-                    <div className='flex flex-col gap-1.5'>
+                    {/* <div className='flex flex-col gap-1.5'>
                         <label htmlFor="adminID">Admin ID</label>
                         <input className="border py-2 px-4 rounded-md bg-gray-200 backdrop-opacity-40" type="text" disabled value={id ?? ""} />
-                    </div>
+                    </div> */}
                     <div className='flex flex-col gap-1.5'>
                         <label htmlFor="" className='text-md'>Change Username</label>
                         <input className="border py-2 px-4 rounded-md" type="text" placeholder={username} value={username} onChange={(e) => { setUsername(e.target.value) }} />
