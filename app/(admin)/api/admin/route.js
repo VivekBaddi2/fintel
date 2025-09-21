@@ -11,7 +11,10 @@ export async function POST(req) {
     const exists = await Admin.findOne({ username });
     if (exists) return NextResponse.json({ error: "Admin already exists" }, { status: 400 });
 
-    const admin = await Admin.create({ username, password });
+    const admin = new Admin({ username, password });
+    await admin.save();
+
+    console.log(role)
     return NextResponse.json(admin, { status: 201 });
   } catch (err) {
     console.error(err);
@@ -29,10 +32,12 @@ export async function GET() {
   }
 }
 
+// Update admin details
 export async function PUT(req) {
   try {
     await connectToDB();
     const { id, username, password } = await req.json();
+    console.log(id, username, password)
     const admin = await Admin.findByIdAndUpdate(id, { username, password }, { new: true });
     return NextResponse.json(admin);
   } catch (err) {

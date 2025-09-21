@@ -24,6 +24,7 @@ export default function AdminLogin() {
 
       if (res.ok && data.success) {
         sessionStorage.setItem("adminLoggedIn", "true");
+        sessionStorage.setItem("username", username);
         router.push("/AdminDashboard");
       } else {
         setError(data.error || "Invalid username or password");
