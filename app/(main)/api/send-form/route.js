@@ -1,18 +1,12 @@
-import nodemailer from "nodemailer";
 import { NextResponse } from "next/server";
+import { getTransporter } from "@/lib/nodemailerconfig";
 
 export async function POST(req) {
   try {
     const { name, email, phone, pdfName } = await req.json();
 
-    // Setup transporter
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.GMAIL_USER,
-        pass: process.env.GMAIL_PASS, // App password
-      },
-    });
+    // Get transporter with OAuth2
+    const transporter = await getTransporter();
 
     // Mail options
     const mailOptions = {

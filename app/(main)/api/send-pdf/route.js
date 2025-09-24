@@ -1,5 +1,5 @@
-import nodemailer from "nodemailer";
 import { NextResponse } from "next/server";
+import { getTransporter } from "@/lib/nodemailerconfig";
 import path from "path";
 import fs from "fs";
 
@@ -11,14 +11,8 @@ export async function POST(req) {
     const filePath = path.join(process.cwd(), "public", "uploads", pdfName);
     const pdfBuffer = fs.readFileSync(filePath);
 
-    // Nodemailer transporter
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.GMAIL_USER,
-        pass: process.env.GMAIL_PASS,
-      },
-    });
+    // Get transporter with OAuth2
+    const transporter = await getTransporter();
 
     // Email options
     const mailOptions = {
