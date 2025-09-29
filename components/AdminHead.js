@@ -60,9 +60,9 @@ const AdminHead = () => {
                         {/* Desktop menu */}
 
 
-                        <div className="hidden lg:ml-auto lg:flex lg:items-center lg:space-x-10">
-                            <a href="/EditPdf" className='text-md font-medium hover:underline hover:font-medium hover:shadow-md'>Edit PDF</a>
-                            <a href="/BlogEditing" className='text-md font-medium hover:underline hover:font-medium hover:shadow-md'>Edit Blog</a>
+                        <div className="hidden lg:ml-auto lg:flex lg:items-center lg:space-x-10 text-gray-700 hover:text-gray-900">
+                            <a href="/EditPdf" className='text-md font-medium hover:underline hover:font-medium'>Add PDF</a>
+                            <a href="/BlogEditing" className='text-md font-medium hover:underline hover:font-medium'>Add Blog</a>
                             {/* dropdown here */}
                             <div
                                 className="relative"
@@ -101,8 +101,8 @@ const AdminHead = () => {
                         <nav className="lg:hidden mt-4">
                             <div className="px-1 py-8">
                                 <div className="grid gap-y-7">
-                                    <a href="/EditPdf" className='text-md font-medium hover:underline hover:font-medium hover:shadow-md'>Edit PDF</a>
-                                    <a href="/BlogEditing" className='text-md font-medium hover:underline hover:font-medium hover:shadow-md'>Edit Blog</a>
+                                    <a href="/EditPdf" className='text-md font-medium hover:underline hover:font-medium hover:shadow-md'>Add PDF</a>
+                                    <a href="/BlogEditing" className='text-md font-medium hover:underline hover:font-medium hover:shadow-md'>Add Blog</a>
                                     {/* dropdown here */}
                                     <div
                                         className="relative"

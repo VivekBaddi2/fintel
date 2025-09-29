@@ -25,7 +25,6 @@ const page = () => {
                 });
 
                 const data = await res.json();
-                console.log("Data is :", data);
                 setMessage("User successfully added as admin!");
 
                 // Hide after 3 seconds

@@ -5,7 +5,7 @@ const Header = () => {
     const [expanded, setExpanded] = useState(false);
 
     return (
-        <div className="overflow-x-hidden bg-gray-50 w-[90vw] mx-auto md:px-6">
+        <div className="overflow-x-hidden bg-gray-50 ">
             <header className="py-4 md:py-6">
                 <div className="container px-4 mx-auto sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between">
@@ -53,18 +53,18 @@ const Header = () => {
                         </div>
 
                         {/* Desktop menu */}
-                        <div className="hidden lg:flex lg:ml-2 lg:items-center lg:justify-center lg:space-x-10 xl:space-x-16 xl:ml-16">
-                            <a href="/" className="text-base font-medium text-gray-900 hover:text-opacity-50">Home</a>
-                            <a href="/AboutUs/whoweare" className="text-base font-medium text-gray-900 hover:text-opacity-50">About Us</a>
-                            <a href="/Services" className="text-base font-medium text-gray-900 hover:text-opacity-50">Services</a>
-                            <a href="/contact" className="text-base font-medium text-gray-900 hover:text-opacity-50">Contact</a>
-                            <a href="/Infozone" className="text-base font-medium text-gray-900 hover:text-opacity-50">InfoZone</a>
-                            <a href="/Blogs" className="text-base font-medium text-gray-900 hover:text-opacity-50">Blog</a> {/* ✅ Added Blogs */}
+                        <div className="hidden lg:flex lg:ml-2 items-center justify-between lg:space-x-10 xl:space-x-16 xl:ml-16">
+                            <a href="/" className="text-base font-medium text-gray-700 hover:text-gray-900">Home</a>
+                            <a href="/AboutUs/whoweare" className="text-base font-medium text-gray-700 hover:text-gray-900">About Us</a>
+                            <a href="/Services" className="text-base font-medium text-gray-700 hover:text-gray-900">Services</a>
+                            <a href="/contact" className="text-base font-medium text-gray-700 hover:text-gray-900">Contact</a>
+                            <a href="/Infozone" className="text-base font-medium text-gray-700 hover:text-gray-900">InfoZone</a>
+                            <a href="/Blogs" className="text-base font-medium text-gray-700 hover:text-gray-900">Blog</a> {/* ✅ Added Blogs */}
                         </div>
 
                         {/* CTA button */}
-                        <div className="hidden lg:ml-auto lg:flex lg:items-center lg:space-x-10">
-                            <a href="/contact" className="inline-flex items-center justify-center px-6 py-3 text-base font-bold text-white bg-gray-900 rounded-xl hover:bg-gray-800">
+                        <div className="hidden lg:ml-auto lg:flex items-center lg:space-x-10">
+                            <a href="/contact" className="inline-flex items-center justify-center px-6 py-3 text-sm font-bold text-white bg-gray-900 rounded-xl hover:bg-gray-800">
                                 Get in touch
                             </a>
                         </div>
@@ -72,7 +72,7 @@ const Header = () => {
 
                     {/* Mobile Menu */}
                     {expanded && (
-                        <nav className="lg:hidden mt-4">
+                        <nav className="lg:hidden mt-4 px-4">
                             <div className="px-1 py-8">
                                 <div className="grid gap-y-7">
                                     <a href="/" className="text-base font-medium text-gray-900 hover:bg-gray-100 p-3 rounded-xl">Home</a>

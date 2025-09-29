@@ -66,7 +66,7 @@ export default async function ServicePage({ params }) {
                         { label: service.title }
                     ]} />
                     <div className="my-2">
-                        <img src={service.img} alt="" className="w-fit lg:w-[90vw] rounded-lg " />
+                        <img src={service.img} alt="image" loading="lazy" className="w-fit lg:w-[90vw] rounded-lg " />
                     </div>
                     <div>
                         <h1 className="text-3xl font-semibold">{service.title}</h1>

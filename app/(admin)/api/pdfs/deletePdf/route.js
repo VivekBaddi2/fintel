@@ -39,7 +39,7 @@ export async function DELETE(request) {
         // Delete the document from the database
         await Pdf.findByIdAndDelete(id);
 
-        return NextResponse.json({ message: 'PDF and data deleted successfully' });
+        return NextResponse.json({ message: 'PDF deleted successfully' });
     } catch (error) {
         console.error('Error deleting PDF:', error);
         return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });

@@ -30,7 +30,6 @@ const page = (req) => {
                 body: JSON.stringify({ pdfId }),
             });
             const data = await res.json();
-            console.log('Fetched PDF data:', data);
 
             setTitle(data.title);
             setDescription(data.description);
@@ -41,7 +40,6 @@ const page = (req) => {
     };
     useEffect(() => {
         if (pdfId != null) {
-            console.log('PDF ID:', pdfId);
             fetchPdfData(pdfId);
         }
     }, [pdfId]);
@@ -127,16 +125,15 @@ const page = (req) => {
 
                 </form >
                 {message && (
-                    <p className={`mt-4 text-center ${message.includes('successfully') ? 'text-green-600' : 'text-red-600'}`}>
+                    <p className={`mt-4 p-3 ${message.includes('successfully') ? 'text-green-600' : 'text-red-600'}`}>
                         {message}
-
                     </p>
                 )
                 }
                 {
                     path && (<>
 
-                        <p className={`mt-4 text-center`}>The URL of uploaded file is:
+                        <p className={`mt-2 p-3`}>The URL of uploaded file is:
                             <a href={path} target='_blank' className='text-gray-900 font-semibold underline'> Click here to access</a>
                         </p>
 

@@ -25,54 +25,64 @@ const ContactSection = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (!captchaValue) {
-            showStatusMessage("Please complete the reCAPTCHA.", "error");
-            return;
-        }
-
         const form = e.target;
         const name = form.name.value;
         const email = form.email.value;
         const message = form.message.value;
 
-        setIsSubmitting(true);
 
-        try {
-            // Verify captcha
-            const captchaRes = await fetch("/api/recaptcha-verification", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ token: captchaValue }),
-            });
+        // Allow only alphabets and spaces
+        if (/^[A-Za-z\s]*$/.test(name)) {
 
-            const captchaData = await captchaRes.json();
-            if (!captchaData.success) {
-                showStatusMessage("Captcha verification failed. Try again.", "error");
-                setIsSubmitting(false);
+            if (!captchaValue) {
+                showStatusMessage("Please complete the reCAPTCHA.", "error");
                 return;
             }
 
-            // Send form data to backend
-            const res = await fetch("/api/contact", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ name, email, message }),
-            });
+            setIsSubmitting(true);
 
-            const data = await res.json();
-            if (data.success) {
-                showStatusMessage("Your message has been sent successfully!", "success");
-                form.reset();
-                setCaptchaValue(null);
-            } else {
-                showStatusMessage("Failed to send message. Please try again later.", "error");
+            try {
+                // Verify captcha
+                const captchaRes = await fetch("/api/recaptcha-verification", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ token: captchaValue }),
+                });
+
+                const captchaData = await captchaRes.json();
+                if (!captchaData.success) {
+                    showStatusMessage("Captcha verification failed. Try again.", "error");
+                    setIsSubmitting(false);
+                    return;
+                }
+
+                // Send form data to backend
+                const res = await fetch("/api/contact", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ name, email, message }),
+                });
+
+                const data = await res.json();
+                if (data.success) {
+                    showStatusMessage("Your message has been sent successfully!", "success");
+                    form.reset();
+                    setCaptchaValue(null);
+                } else {
+                    showStatusMessage("Failed to send message. Please try again later.", "error");
+                }
+            } catch (error) {
+                console.error("Error submitting contact form:", error);
+                showStatusMessage("An error occurred. Please try again later.", "error");
+            } finally {
+                setIsSubmitting(false);
             }
-        } catch (error) {
-            console.error("Error submitting contact form:", error);
-            showStatusMessage("An error occurred. Please try again later.", "error");
-        } finally {
-            setIsSubmitting(false);
         }
+        else {
+            showStatusMessage("Only alphabets and spaces are allowed in Name field", "error");
+        }
+
+
     };
 
     return (
@@ -159,9 +169,8 @@ const ContactSection = () => {
                                     <button
                                         type='submit'
                                         disabled={isSubmitting}
-                                        className={`w-full text-white border-0 py-2 px-6 mt-1 rounded text-lg ${
-                                            isSubmitting ? 'bg-gray-600 cursor-not-allowed' : 'bg-gray-900 hover:bg-gray-800'
-                                        }`}
+                                        className={`w-full text-white border-0 py-2 px-6 mt-1 rounded text-lg ${isSubmitting ? 'bg-gray-600 cursor-not-allowed' : 'bg-gray-900 hover:bg-gray-800'
+                                            }`}
                                     >
                                         {isSubmitting ? 'Sending...' : 'Submit'}
                                     </button>

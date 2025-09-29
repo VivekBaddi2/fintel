@@ -1,5 +1,7 @@
 'use client'
 import { useState, useEffect } from "react";
+import { toast } from 'react-toastify';
+
 
 export default function AdminDashboard() {
   const [blogs, setBlogs] = useState([]);
@@ -73,11 +75,17 @@ export default function AdminDashboard() {
 
       if (response.ok) {
         setSuccess("Successfully deleted");
+        toast.success(data.message, {
+          autoClose: 5000,
+          closeOnClick: true,
+          pauseOnHover: true,
+        });
         await fetchPdfs(); // Re-fetch PDFs after deletion
       }
 
     } catch (error) {
       console.log("There is some error: ", error);
+      toast.error(err.message);
     }
 
   }
@@ -96,12 +104,16 @@ export default function AdminDashboard() {
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Failed to delete blog");
 
-      // alert(data.message);
+      toast.success(data.message, {
+        autoClose: 5000,
+        closeOnClick: true,
+        pauseOnHover: true,
+      });
 
       // Refresh the blogs on the current page
       await fetchBlogs(); // Re-fetch PDFs after deletion
     } catch (err) {
-      alert(err.message);
+      toast.error(err.message);
     }
   }
 
@@ -137,40 +149,71 @@ export default function AdminDashboard() {
           {
             blogs.map((blog) => {
               return (
-                <div key={blog._id} className="max-w-sm bg-white rounded-xl shadow-md overflow-hidden border border-gray-400 hover:shadow-lg transition-shadow duration-300">
-                  <div className="p-5">
+                <div
+                  key={blog._id}
+                  className="w-sm bg-white rounded-xl shadow-md border border-gray-400 hover:shadow-lg transition-shadow duration-300 flex flex-col"
+                >
+                  <div className="p-5 flex flex-col h-full">
                     {/* Title with Icon */}
                     <div className="flex items-center gap-2">
-                      <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" width="36px" id="document-layout-left">
-                        <path fill="#000000" d="M13,8h8c0.6,0,1-0.4,1-1s-0.4-1-1-1h-8c-0.6,0-1,0.4-1,1S12.4,8,13,8z M21,10h-8c-0.6,0-1,0.4-1,1s0.4,1,1,1h8c0.6,0,1-0.4,1-1S21.6,10,21,10z M3,12h6c0.6,0,1-0.4,1-1V5c0-0.6-0.4-1-1-1H3C2.4,4,2,4.4,2,5v6C2,11.6,2.4,12,3,12z M21,14H3c-0.6,0-1,0.4-1,1s0.4,1,1,1h18c0.6,0,1-0.4,1-1S21.6,14,21,14z M13,18H3c-0.6,0-1,0.4-1,1s0.4,1,1,1h10c0.6,0,1-0.4,1-1S13.6,18,13,18z"></path>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        enableBackground="new 0 0 24 24"
+                        viewBox="0 0 24 24"
+                        className="w-6 h-6 text-gray-700 flex-shrink-0"
+                        id="document-layout-left"
+                      >
+                        <path
+                          fill="#000000"
+                          d="M13,8h8c0.6,0,1-0.4,1-1s-0.4-1-1-1h-8c-0.6,0-1,0.4-1,1S12.4,8,13,8z M21,10h-8c-0.6,0-1,0.4-1,1
+          s0.4,1,1,1h8c0.6,0,1-0.4,1-1S21.6,10,21,10z M3,12h6c0.6,0,1-0.4,1-1V5c0-0.6-0.4-1-1-1H3C2.4,4,2,4.4,2,5v6
+          C2,11.6,2.4,12,3,12z M21,14H3c-0.6,0-1,0.4-1,1s0.4,1,1,1h18c0.6,0,1-0.4,1-1S21.6,14,21,14z M13,18H3c-0.6,0-1,0.4-1,1
+          s0.4,1,1,1h10c0.6,0,1-0.4,1-1S13.6,18,13,18z"
+                        ></path>
                       </svg>
-                      <h2 title={blog.title} className="text-lg font-semibold text-gray-900 line-clamp-1 overflow-hidden whitespace-nowrap text-ellipsis">
+                      <h2
+                        title={blog.title}
+                        className="text-lg font-semibold text-gray-900 line-clamp-1"
+                      >
                         {blog.title}
                       </h2>
                     </div>
 
-                    <p title={blog.description} className="mt-2 text-sm text-gray-600 line-clamp-3">{blog.description}</p>
+                    {/* Description */}
+                    <p
+                      title={blog.description}
+                      className="mt-2 text-sm text-gray-600 line-clamp-3"
+                    >
+                      {blog.description}
+                    </p>
 
-
-                    <div className="mt-4 flex items-center gap-3">
-                      <a href={"/BlogEditing/?id=" + blog._id}>
-                        <button className="px-4 py-2 rounded-lg bg-gray-900 text-white text-sm font-medium hover:bg-gray-800 transition">
+                    {/* Buttons at bottom */}
+                    <div className="mt-auto pt-4 flex items-center gap-3">
+                      <a href={"/BlogEditing/?id=" + blog._id} className="w-full sm:w-auto">
+                        <button className="flex-shrink-0 w-full md:h-full h-12 sm:w-auto px-3 py-1 md:px-4 md:py-2 rounded-lg bg-gray-900 text-white text-sm font-medium hover:bg-gray-800 transition cursor-pointer">
                           Edit Post
                         </button>
                       </a>
-                      <a href={"/BlogPost/?id=" + blog._id}>
-                        <button className="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 text-sm font-medium hover:bg-gray-100 transition">
+                      <a href={"/BlogPost/?id=" + blog._id} className="w-full sm:w-auto">
+                        <button className="flex-shrink-0 w-full md:h-full h-12 sm:w-auto px-3 py-1 md:px-4 md:py-2 rounded-lg border border-gray-300 text-gray-700 text-sm font-medium hover:bg-gray-100 transition cursor-pointer">
                           View Post
                         </button>
                       </a>
-                      <button onClick={() => deleteBlogBtn(blog._id)} className="px-4 py-2 rounded-lg bg-red-500 text-white text-sm font-medium hover:bg-red-600 transition">Delete</button>
+                      <button
+                        onClick={() => deleteBlogBtn(blog._id)}
+                        className=" w-full h-12 md:h-full  sm:w-auto px-3 py-1 md:px-4 md:py-2 rounded-lg bg-red-500 text-white text-sm font-medium hover:bg-red-600 transition cursor-pointer"
+                      >
+                        Delete
+                      </button>
                     </div>
                   </div>
                 </div>
+
               )
             })
           }
         </div>
+
       </div>
 
 
@@ -182,24 +225,66 @@ export default function AdminDashboard() {
           </a>
         </div>
 
-        <div className="pdfCardContainer h-fit w-full mt-2 flex gap-10  overflow-x-auto noScroll p-2 ">
+        <div className="pdfCardContainer h-fit w-full mt-2 flex gap-10 overflow-x-auto noScroll p-2 ">
           {
             pdfs.map((pdf) => {
               return (
-                <div key={pdf._id} className="pdfCard h-[230px] md:h-[300px] w-[300px] md:w-[370px] flex-shrink-0 bg-white border-1 shadow-md hover:scale-[101%] cursor-pointer rounded-xl border-gray-900 p-4 flex flex-col gap-2">
-                  <h3 title={pdf.title} className="h-[15%] text-xl font-semibold  overflow-hidden text-ellipsis whitespace-nowrap">{pdf.title}</h3>
-                  <p title={pdf.description} className="h-[55%] font-light text-justify text-ellipsis line-clamp-4 ">{pdf.description}</p>
-                  <div className="btnContainer h-[20%] mt-3 flex gap-4 items-center ">
-                    <a href={"/EditPdf?id=" + pdf._id}>
-                      <button className="h-10 md:h-10 lg:h-12 lg:text-[14px] text-[12px] inline-flex items-center justify-center px-4 py-2 font-bold text-white bg-gray-900 rounded-xl hover:bg-gray-800 cursor-pointer">Edit PDF</button>
-                    </a>
-                    <a href={pdf.path} target="_blank">
-                      <button className="h-10 md:h-10 lg:h-12 lg:text-[14px] text-[12px] inline-flex items-center justify-center px-4 py-2 font-bold text-black border-2 border-gray-900 rounded-xl hover:bg-gray-100 cursor-pointer">View PDF</button>
-                    </a>
-                    <button onClick={() => deletePDFBtn(pdf._id)} className="h-10 md:h-10 lg:h-12 lg:text-[14px] text-[12px] inline-flex items-center justify-center px-4 py-2 font-bold text-white border-2 bg-red-500 rounded-xl hover:bg-red-400 cursor-pointer">Delete</button>
+                <div
+                  key={pdf._id}
+                  className="w-[380px] bg-white rounded-xl shadow-md border border-gray-400 hover:shadow-lg transition-shadow duration-300 flex flex-col"
+                >
+                  <div className="p-5 flex flex-col h-full">
+                    {/* Title with Icon */}
+                    <div className="flex items-center gap-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        className="w-6 h-6 text-gray-700 flex-shrink-0"
+                        id="file-alt"
+                      >
+                        <path
+                          fill="#000000"
+                          d="M9,10h1a1,1,0,0,0,0-2H9a1,1,0,0,0,0,2Zm0,2a1,1,0,0,0,0,2h6a1,1,0,0,0,0-2ZM20,8.94a1.31,1.31,0,0,0-.06-.27l0-.09a1.07,1.07,0,0,0-.19-.28h0l-6-6h0a1.07,1.07,0,0,0-.28-.19.32.32,0,0,0-.09,0A.88.88,0,0,0,13.05,2H7A3,3,0,0,0,4,5V19a3,3,0,0,0,3,3H17a3,3,0,0,0,3-3V9S20,9,20,8.94ZM14,5.41,16.59,8H15a1,1,0,0,1-1-1ZM18,19a1,1,0,0,1-1,1H7a1,1,0,0,1-1-1V5A1,1,0,0,1,7,4h5V7a3,3,0,0,0,3,3h3Zm-3-3H9a1,1,0,0,0,0,2h6a1,1,0,0,0,0-2Z"
+                        ></path>
+                      </svg>
+                      <h2
+                        title={pdf.title}
+                        className="text-lg font-semibold text-gray-900 line-clamp-1"
+                      >
+                        {pdf.title}
+                      </h2>
+                    </div>
 
+                    {/* Description */}
+                    <p
+                      title={pdf.description}
+                      className="mt-2 text-sm text-gray-600 line-clamp-3"
+                    >
+                      {pdf.description}
+                    </p>
+
+                    {/* Buttons at bottom */}
+                    <div className="mt-auto pt-4 flex gap-3">
+                      <a href={"/EditPdf?id=" + pdf._id} className="w-full sm:w-auto">
+                        <button className="flex-shrink-0 w-full h-12 md:h-full sm:w-auto px-3 py-1 md:px-4 md:py-2 rounded-lg bg-gray-900 text-white text-sm font-medium hover:bg-gray-800 transition cursor-pointer">
+                          Edit PDF
+                        </button>
+                      </a>
+                      <a href={pdf.path} target="_blank" className="w-full sm:w-auto">
+                        <button className="flex-shrink-0 w-full h-12 md:h-full sm:w-auto px-3 py-1 md:px-4 md:py-2 rounded-lg border border-gray-300 text-gray-700 text-sm font-medium hover:bg-gray-100 transition cursor-pointer">
+                          View PDF
+                        </button>
+                      </a>
+                      <button
+                        onClick={() => deletePDFBtn(pdf._id)}
+                        className="w-full h-12 md:h-full sm:w-auto px-3 py-1 md:px-4 md:py-2 rounded-lg bg-red-500 text-white text-sm font-medium hover:bg-red-600 transition cursor-pointer"
+                      >
+                        Delete
+                      </button>
+                    </div>
                   </div>
                 </div>
+
 
               )
             })

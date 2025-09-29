@@ -2,7 +2,7 @@ import React from 'react';
 
 const BreadCrumb = ({ items = [] }) => {
     return (
-        <div className='breadCrumbContainer h-10 w-fit bg-gray-200 rounded-4xl py-8 px-4 my-8'>
+        <div className='breadCrumbContainer h-10 md:w-fit bg-white shadow-md rounded-full py-8 px-8 my-8'>
             <nav className="breadCrumbNav h-full flex items-center justify-center text-gray-600 text-sm md:text-md" aria-label="Breadcrumb">
                 {items.map((item, idx) => (
                     <span key={item.href || item.label} className="flex items-center h-12">
@@ -10,7 +10,7 @@ const BreadCrumb = ({ items = [] }) => {
                         {item.href ? (
                             <a href={item.href} className="hover:text-gray-800 font-medium">{item.label}</a>
                         ) : (
-                            <span className="w-[130px] h-fit  my-1 py-1.5 md:py-3 px-3 rounded-3xl bg-gray-900 font-semibold text-gray-50 text-center overflow-hidden text-ellipsis whitespace-nowrap">{item.label}</span>
+                            <span className="w-[130px] h-fit  my-1 py-3 md:py-3 px-3 rounded-3xl bg-gray-900 font-semibold text-gray-50 text-center overflow-hidden text-ellipsis whitespace-nowrap">{item.label}</span>
                         )}
                     </span>
                 ))}

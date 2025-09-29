@@ -36,7 +36,7 @@ const ComponentName = () => {
                             <div className="absolute inset-0 h-2/3 bg-gray-50"></div>
                             <div className="relative mx-auto">
                                 <div className="lg:max-w-6xl lg:mx-auto">
-                                    <img className="transform scale-90 rounded-2xl" src="/banner-8.jpg" alt="" />
+                                    <img className="transform scale-90 rounded-2xl" src="/banner-8.jpg" loading="lazy" alt="hero banner" />
                                 </div>
                             </div>
                         </div>

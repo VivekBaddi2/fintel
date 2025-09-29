@@ -24,7 +24,6 @@ const page = () => {
         const data = await res.json();
         // console.log("Fetched data : ", data._id)
         const loggedinUser = data.filter((d) => d.username == username)
-        console.log(loggedinUser);
         loggedinUser.map((user) => {
             setId(user._id);
         });
@@ -46,7 +45,6 @@ const page = () => {
                 });
 
                 const data = await res.json();
-                console.log("Data is :", data);
                 setMessage("Admin details successfully edited!");
             }
             catch (err) {

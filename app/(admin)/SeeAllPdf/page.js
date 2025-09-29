@@ -1,5 +1,7 @@
 "use client"
+import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
+import { toast } from 'react-toastify';
 
 const page = () => {
 
@@ -8,6 +10,9 @@ const page = () => {
     const [search, setSearch] = useState("");
     const [visible, setVisible] = useState(6); // posts per page
     const [prev, setPrev] = useState(0);
+    const [deleted, setDeleted] = useState(false);
+
+    const router = useRouter();
 
     // Check login
     useEffect(() => {
@@ -30,11 +35,22 @@ const page = () => {
             console.log(data.message);
 
             if (response.ok) {
-                setSuccess("Successfully deleted");
+                // setSuccess("Successfully deleted");
+                // router.refresh();
+                // setDeleted(true);
+                toast.success(data.message, {
+                    autoClose: 5000,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                });
                 await fetchPdfs(); // Re-fetch PDFs after deletion
+
             }
+            console.log(deleted)
+
 
         } catch (error) {
+            toast.error(error.message);
             console.log("There is some error: ", error);
         }
 
@@ -83,25 +99,74 @@ const page = () => {
                     onChange={(e) => setSearch(e.target.value)}
                 />
             </div>
-            <div className="pdfCardContainer w-full h-fit mt-2 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-2">
-                {
-                    filteredPdfs.slice(prev, visible).map((pdf) => (
-                        <div key={pdf._id} className="pdfCard h-[300px] bg-white border-1 shadow-md hover:scale-[101%] cursor-pointer rounded-xl border-gray-900 w-full p-4 flex flex-col gap-2">
-                            <h3 title={pdf.title} className="h-[15%] text-xl font-semibold overflow-hidden whitespace-nowrap text-ellipsis">{pdf.title}</h3>
-                            <p title={pdf.description} className="h-[55%] font-light text-justify text-ellipsis line-clamp-6 ">{pdf.description}</p>
-                            <div className="h-[20%] btnContainer mt-1 flex gap-4 items-center">
-                                <a href={"/EditPdf?id=" + pdf._id}>
-                                    <button className="inline-flex items-center justify-center  px-2 md:py-2 h-12 md:h-10 lg:h-12 lg:text-[14px] text-[12px] font-bold text-white bg-gray-900 rounded-xl hover:bg-gray-800 cursor-pointer">Edit PDF</button>
-                                </a>
-                                <a href={pdf.path} target="_blank">
-                                    <button className="inline-flex items-center justify-center  px-2 md:py-2 h-12 md:h-10 lg:h-12 lg:text-[14px] text-[12px] font-bold text-black border-2 border-gray-900 rounded-xl hover:bg-gray-100 cursor-pointer">View PDF</button>
-                                </a>
-                                <button onClick={() => deleteBtn(pdf._id)} className="h-10 md:h-10 lg:h-12 inline-flex items-center justify-center  px-2 md:py-2  lg:text-[14px] text-[12px] font-bold text-white border-2 bg-red-500 rounded-xl hover:bg-red-400 cursor-pointer">Delete</button>
+
+            {/* PDF container */}
+            {pdfs.length == 0 ?
+                <p className='font-light text-lg p-3'>No PDFs to display</p>
+                : <div className="pdfCardContainer w-full h-fit mt-2 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-2">
+                    {
+                        filteredPdfs.slice(prev, visible).map((pdf) => (
+                            <div
+                                key={pdf._id}
+                                className="w-[380px] bg-white rounded-xl shadow-md border border-gray-400 hover:shadow-lg transition-shadow duration-300 flex flex-col"
+                            >
+                                <div className="p-5 flex flex-col h-full">
+                                    {/* Title with Icon */}
+                                    <div className="flex items-center gap-2">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24"
+                                            className="w-6 h-6 text-gray-700 flex-shrink-0"
+                                            id="file-alt"
+                                        >
+                                            <path
+                                                fill="#000000"
+                                                d="M9,10h1a1,1,0,0,0,0-2H9a1,1,0,0,0,0,2Zm0,2a1,1,0,0,0,0,2h6a1,1,0,0,0,0-2ZM20,8.94a1.31,1.31,0,0,0-.06-.27l0-.09a1.07,1.07,0,0,0-.19-.28h0l-6-6h0a1.07,1.07,0,0,0-.28-.19.32.32,0,0,0-.09,0A.88.88,0,0,0,13.05,2H7A3,3,0,0,0,4,5V19a3,3,0,0,0,3,3H17a3,3,0,0,0,3-3V9S20,9,20,8.94ZM14,5.41,16.59,8H15a1,1,0,0,1-1-1ZM18,19a1,1,0,0,1-1,1H7a1,1,0,0,1-1-1V5A1,1,0,0,1,7,4h5V7a3,3,0,0,0,3,3h3Zm-3-3H9a1,1,0,0,0,0,2h6a1,1,0,0,0,0-2Z"
+                                            ></path>
+                                        </svg>
+                                        <h2
+                                            title={pdf.title}
+                                            className="text-lg font-semibold text-gray-900 line-clamp-1"
+                                        >
+                                            {pdf.title}
+                                        </h2>
+                                    </div>
+
+                                    {/* Description */}
+                                    <p
+                                        title={pdf.description}
+                                        className="mt-2 text-sm text-gray-600 line-clamp-3"
+                                    >
+                                        {pdf.description}
+                                    </p>
+
+                                    {/* Buttons at bottom */}
+                                    <div className="mt-auto pt-4 flex gap-3">
+                                        <a href={"/EditPdf?id=" + pdf._id} className="w-full sm:w-auto">
+                                            <button className="flex-shrink-0 w-full h-12 md:h-full sm:w-auto px-3 py-1 md:px-4 md:py-2 rounded-lg bg-gray-900 text-white text-sm font-medium hover:bg-gray-800 transition cursor-pointer">
+                                                Edit PDF
+                                            </button>
+                                        </a>
+                                        <a href={pdf.path} target="_blank" className="w-full sm:w-auto">
+                                            <button className="flex-shrink-0 w-full h-12 md:h-full sm:w-auto px-3 py-1 md:px-4 md:py-2 rounded-lg border border-gray-300 text-gray-700 text-sm font-medium hover:bg-gray-100 transition cursor-pointer">
+                                                View PDF
+                                            </button>
+                                        </a>
+                                        <button
+                                            onClick={() => deleteBtn(pdf._id)}
+                                            className="w-full h-12 md:h-full sm:w-auto px-3 py-1 md:px-4 md:py-2 rounded-lg bg-red-500 text-white text-sm font-medium hover:bg-red-600 transition cursor-pointer"
+                                        >
+                                            Delete
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    ))
-                }
-            </div>
+                        ))
+                    }
+                </div>}
+
+
+            {/* Page Navigation */}
             <div className="p-2 flex gap-4 mt-4">
                 <button
                     onClick={() => {
