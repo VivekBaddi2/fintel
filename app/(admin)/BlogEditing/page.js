@@ -173,8 +173,16 @@ export default function AdminDashboard() {
                         >
                             {blogId ? "Update Blog" : "Add Blog"}
                         </button>
-                        {error && <span className="text-red-500">{error}</span>}
-                        {success && <span className="text-green-600">{success}</span>}
+                        {
+                            error &&
+                            <span className='text-red-600'>
+                                {error}
+                            </span>
+                        }
+                        {
+                            success &&
+                            <span className="text-green-600">{success}</span>
+                        }
                     </div>
                 </form>
             </div>
