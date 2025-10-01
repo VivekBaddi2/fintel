@@ -48,11 +48,11 @@ const page = () => {
                 <form onSubmit={handleSubmit} className='flex flex-col mb-8 gap-4'>
                     <div className='flex flex-col gap-1.5'>
                         <label htmlFor="" className='text-md'>Username</label>
-                        <input required className="border py-2 px-4 rounded-md" type="text" placeholder="username" onChange={(e) => { setUsername(e.target.value) }} />
+                        <input required className="border py-2 px-4 rounded-md" type="text" placeholder="Enter username" onChange={(e) => { setUsername(e.target.value) }} />
                     </div>
                     <div className='flex flex-col gap-1.5'>
                         <label htmlFor="" className='text-md'>Password</label>
-                        <input required className="border py-2 px-4 rounded-md" type="password" placeholder='********' onChange={(e) => { setPassword(e.target.value) }} />
+                        <input required className="border py-2 px-4 rounded-md" type="password" placeholder='Enter password' onChange={(e) => { setPassword(e.target.value) }} />
                     </div>
                     <div className='btnContainer flex gap-4'>
                         <div>

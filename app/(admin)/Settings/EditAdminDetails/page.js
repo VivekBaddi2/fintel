@@ -115,7 +115,7 @@ const page = () => {
                     </div>
                     <div className='flex flex-col gap-1.5'>
                         <label htmlFor="" className='text-md'>Change Password</label>
-                        <input className="border py-2 px-4 rounded-md" type="password" placeholder='********' onChange={(e) => { setPassword(e.target.value) }} />
+                        <input className="border py-2 px-4 rounded-md" type="password" placeholder='Enter new password' onChange={(e) => { setPassword(e.target.value) }} />
                     </div>
                     <div className='btnContainer flex gap-4'>
                         <div>
