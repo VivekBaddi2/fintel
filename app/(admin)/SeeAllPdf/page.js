@@ -108,7 +108,7 @@ const page = () => {
                         filteredPdfs.slice(prev, visible).map((pdf) => (
                             <div
                                 key={pdf._id}
-                                className="w-[380px] bg-white rounded-xl shadow-md border border-gray-400 hover:shadow-lg transition-shadow duration-300 flex flex-col"
+                                className="w-full bg-white rounded-xl shadow-md border border-gray-400 hover:shadow-lg transition-shadow duration-300 flex flex-col"
                             >
                                 <div className="p-5 flex flex-col h-full">
                                     {/* Title with Icon */}

@@ -89,12 +89,12 @@ const page = () => {
             </div>
             {blogs.length == 0 ? <p className='text-lg font-light p-3'>No blogs available</p> :
                 // Blog container
-                <div className="pdfCardContainer w-full h-fit mt-2 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-2">
+                <div className="pdfCardContainer w-full h-fit mt-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-2">
                     {
                         filteredBlogs.slice(prev, visible).map((blog) => (
                             <div
                                 key={blog._id}
-                                className="w-sm bg-white rounded-xl shadow-md border border-gray-400 hover:shadow-lg transition-shadow duration-300 flex flex-col"
+                                className="w-[100%] bg-white rounded-xl shadow-md border border-gray-400 hover:shadow-lg transition-shadow duration-300 flex flex-col"
                             >
                                 <div className="p-5 flex flex-col h-full">
                                     {/* Title with Icon */}

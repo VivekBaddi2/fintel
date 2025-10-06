@@ -45,14 +45,14 @@ export async function PUT(req) {
   }
 }
 
-export async function DELETE(req) {
-  try {
-    await connectToDB();
-    const { id } = await req.json();
-    await Admin.findByIdAndDelete(id);
-    return NextResponse.json({ success: true });
-  } catch (err) {
-    return NextResponse.json({ error: "Failed to delete admin" }, { status: 500 });
-  }
-}
+// export async function DELETE(req) {
+//   try {
+//     await connectToDB();
+//     const { id } = await req.json();
+//     await Admin.findByIdAndDelete(id);
+//     return NextResponse.json({ success: true });
+//   } catch (err) {
+//     return NextResponse.json({ error: "Failed to delete admin" }, { status: 500 });
+//   }
+// }
 

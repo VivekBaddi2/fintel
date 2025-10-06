@@ -16,14 +16,15 @@ const AdminHead = () => {
                     <div className="flex items-center justify-between">
                         {/* Logo */}
                         <div className="flex-shrink-0">
-                            <a href="/" className="flex rounded ">
+                            <a href="/" className="flex rounded">
                                 <img
-                                    className="w-auto h-10"
-                                    src="/fintel-logo.png"
+                                    className="h-auto w-[180px] -ml-6 sm:-ml-0 sm:w-auto sm:h-12 md:h-14 lg:h-16"
+                                    src="/fintel-black-logo.png"
                                     alt="Logo"
                                 />
                             </a>
                         </div>
+
 
                         {/* Mobile menu button */}
                         <div className="flex lg:hidden">
@@ -35,7 +36,7 @@ const AdminHead = () => {
                             >
                                 {expanded ? (
                                     <svg
-                                        className="w-7 h-7"
+                                        className="w-5 h-5"
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="none"
                                         viewBox="0 0 24 24"
@@ -82,7 +83,6 @@ const AdminHead = () => {
                                 {/* Dropdown Menu */}
                                 {dropdownOpen && (
                                     <div className="absolute left-0 mt-0.5 w-40 bg-white border rounded shadow-lg z-50">
-                                        <a href="/Settings/AddAdmin" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Add Admin</a>
                                         <a href="/Settings/EditAdminDetails" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Edit Admin Details</a>
                                     </div>
                                 )}
@@ -122,7 +122,6 @@ const AdminHead = () => {
                                         {/* Dropdown Menu */}
                                         {dropdownOpen && (
                                             <div className="absolute left-0 mt-0.5 w-40 bg-white border rounded shadow-lg z-50">
-                                                <a href="/Settings/AddAdmin" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Add Admin</a>
                                                 <a href="/Settings/EditAdminDetails" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Edit Admin Details</a>
                                             </div>
                                         )}

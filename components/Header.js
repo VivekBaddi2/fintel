@@ -13,8 +13,8 @@ const Header = () => {
                         <div className="flex-shrink-0">
                             <a href="/" className="flex rounded ">
                                 <img
-                                    className="w-auto h-10"
-                                    src="/fintel-logo.png"
+                                    className="h-auto w-[180px] -ml-6 sm:-ml-0 sm:w-auto sm:h-12 md:h-14 lg:h-16"
+                                    src="/fintel-black-logo.png"
                                     alt="Logo"
                                 />
                             </a>

@@ -7,13 +7,7 @@ export default function AdminDashboard() {
   const [blogs, setBlogs] = useState([]);
   const [pdfs, setPdfs] = useState([]);
   const [loading, setLoading] = useState(true);
-
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [content, setContent] = useState("");
-  const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
-  const [editId, setEditId] = useState(null);
 
   // Check login
   useEffect(() => {
@@ -120,8 +114,8 @@ export default function AdminDashboard() {
   if (loading) return <p className="text-center mt-24 text-gray-500">Loading...</p>;
 
   return (
-    <div className="w-[90vw] md:w-[80vw] mx-auto p-2 space-y-10">
-      <h1 className="text-3xl font-bold text-gray-800">Admin Dashboard</h1>
+    <div className="w-[90vw] md:w-[80vw] mx-auto px-2 space-y-4 md:space-y-8">
+      <h1 className="text-2xl md:text-3xl font-bold text-gray-800">Admin Dashboard</h1>
 
       <div className="h-[50vh] w-full  rounded-xl bg-white shadow-md md:flex hidden">
         <div className="w-1/3">
@@ -131,7 +125,7 @@ export default function AdminDashboard() {
           <div>
             <img src="/quote-svg.svg" alt="Quote svg" className="h-[60px]" />
           </div>
-          <p className="w-[90%] text-2xl italic text-center">
+          <p className="w-[90%] text-lg lg:text-2xl italic text-center">
             The fire you seek is already within you—every challenge is just fuel, every setback is just a spark. Rise, ignite your energy, and turn today into the day you move closer to your greatness
           </p>
         </div>
@@ -139,13 +133,15 @@ export default function AdminDashboard() {
 
       <div className="latestBlogsDiv">
         <div className="flex justify-between items-center">
-          <h2 className="text-xl md:text-2xl font-bold">Your latest blogs</h2>
+          <h2 className="text-lg md:text-2xl font-bold">Your latest blogs</h2>
           <a href="/SeeAllBlog">
             <p className="underline text-sm md:text-md">See all</p>
           </a>
         </div>
 
-        <div className="blogCardContainer h-fit w-full mt-2 flex gap-10  overflow-x-auto noScroll p-2 ">
+        <div className="blogCardContainer h-fit w-full mt-2 flex gap-10 overflow-x-auto noScroll p-2">
+
+          {/* Content */}
           {
             blogs.map((blog) => {
               return (
@@ -212,14 +208,14 @@ export default function AdminDashboard() {
               )
             })
           }
-        </div>
 
+        </div>
       </div>
 
 
       <div className="uploadedPdfsDiv">
         <div className="flex justify-between items-center">
-          <h2 className="text-xl md:text-2xl font-bold">Your uploaded PDFs</h2>
+          <h2 className="text-lg md:text-2xl font-bold">Your uploaded PDFs</h2>
           <a href="/SeeAllPdf">
             <p className="underline text-sm md:text-md">See all</p>
           </a>
