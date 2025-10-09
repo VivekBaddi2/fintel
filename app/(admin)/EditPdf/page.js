@@ -121,7 +121,7 @@ const page = (req) => {
                     <label htmlFor="pdfDescription" className='font-medium'>Pdf Description</label>
                     {/* <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} name="pdfDescription" id="pdfDescription" placeholder='Description' className='border rounded-xl p-2' required /> */}
                     <textarea value={description} onChange={(e) => setDescription(e.target.value)} rows={4} name="pdfDescription" id="pdfDescription" placeholder='Description' className='bg-white border rounded-xl p-2' required ></textarea>
-                    <button type="submit" disabled={isLoading} className='border rounded-lg w-fit px-4 py-4 bg-gray-900 text-white font-medium cursor-pointer'>{isLoading ? 'Uploading...' : 'Upload PDF'}</button>
+                    <button type="submit" disabled={isLoading} className='active:scale-95 border rounded-lg w-fit px-4 py-3 mt-2 bg-gray-900 text-white font-medium cursor-pointer'>{isLoading ? 'Uploading...' : 'Upload PDF'}</button>
 
                 </form >
                 {message && (

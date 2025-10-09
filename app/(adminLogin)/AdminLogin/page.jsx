@@ -49,7 +49,7 @@ const AdminLoginCard = () => {
         // Outer container for the full page, mimicking the purple background from the design
         <>
             <div className="min-h-screen bg-gradient-to-br from-gray-100 to-white flex flex-col items-center justify-center p-4 relative overflow-hidden">
-                <img src="/fintel-logo.png" className='w-70 mb-8 ' alt="Fintel Logo" />
+                <img src="/fintel-color-logo.png" className='w-70 mb-4 ' alt="Fintel Logo" />
 
                 {/* Background shape elements (for the "futuristic" corporate feel) */}
                 <div className="absolute top-10 left-10 text-white opacity-20 text-4xl transform rotate-45">+ +</div>
@@ -61,11 +61,7 @@ const AdminLoginCard = () => {
                     {/* === LEFT SIDE: Illustration/Visuals === */}
                     <div className="hidden lg:w-1/2 p-8 lg:flex items-center justify-center bg-white border-r border-gray-200 relative">
 
-                        {/* Mockup for the illustration (Replace this div with your actual SVG/Image component) */}
                         <div className="w-full max-w-sm h-full max-h-80 flex items-center justify-center">
-                            {/* In a real application, you'd import your illustration SVG/PNG here. 
-              For this Tailwind mockup, we'll use an abstract placeholder.
-            */}
                             <div className="relative w-full h-full">
                                 {/* <div className="w-full h-full bg-gradient-to-br from-indigo-50 to-purple-50 rounded-lg"></div> */}
                                 <div className="absolute inset-0 flex items-center justify-center">
@@ -114,7 +110,7 @@ const AdminLoginCard = () => {
                             <button
                                 type="submit"
                                 disabled={loading}
-                                className="w-full py-3 bg-gray-900 text-white font-bold text-lg rounded-lg shadow-md hover:bg-gray-800 transition duration-200 focus:outline-none focus:ring-4 focus:ring-purple-300"
+                                className="active:scale-95 cursor-pointer w-full py-3 bg-gray-900 text-white font-bold text-lg rounded-lg shadow-md hover:bg-gray-800 transition duration-200 focus:outline-none focus:ring-4 focus:ring-gray-300"
                             >
                                 {loading ? "Logging in..." : "LOGIN"}
                             </button>

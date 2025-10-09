@@ -55,7 +55,7 @@ export default function BlogPost() {
                 { label: blog.title }
             ]} />
             {/* Blog title */}
-            <h1 className="text-4xl font-bold mb-6">{blog.title}</h1>
+            <h1 className="text-2xl md:text-3xl font-bold mb-4">{blog.title}</h1>
 
             {/* Last updated date */}
             <p className="text-sm text-gray-500 mb-2">

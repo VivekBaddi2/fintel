@@ -116,7 +116,7 @@ const page = () => {
                                         </svg>
                                         <h2
                                             title={blog.title}
-                                            className="text-lg font-semibold text-gray-900 line-clamp-1"
+                                            className="text-lg font-semibold text-gray-900 line-clamp-2"
                                         >
                                             {blog.title}
                                         </h2>
@@ -165,7 +165,7 @@ const page = () => {
                         setPrev(newVisible - 6);
                     }}
                     disabled={visible <= 6} // Disable on first page
-                    className="bg-white px-4 py-2 border rounded-lg disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+                    className="active:scale-95 bg-white px-4 py-2 border rounded-lg disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
                 >
                     Previous
                 </button>
@@ -177,7 +177,7 @@ const page = () => {
                         setVisible(newVisible);
                     }}
                     disabled={visible >= blogs.length} // Disable on last page
-                    className="bg-white px-4 py-2 border rounded-lg disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+                    className="active:scale-95 bg-white px-4 py-2 border rounded-lg disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
                 >
                     Next
                 </button>

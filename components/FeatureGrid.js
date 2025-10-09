@@ -60,7 +60,7 @@ const FeatureGrid = () => {
                                     <h3 className="font-semibold text-lg mb-2">
                                         {feature.title}
                                     </h3>
-                                    <p className="text-sm text-gray-600 leading-relaxed">
+                                    <p className="text-md text-gray-600 leading-relaxed">
                                         {feature.description}
                                     </p>
                                 </div>
@@ -70,7 +70,7 @@ const FeatureGrid = () => {
                             <>
                                 <div className=" text-2xl mb-3">{feature.icon}</div>
                                 <h3 className="font-semibold text-lg mb-2">{feature.title}</h3>
-                                <p className="text-sm text-gray-600 leading-relaxed">
+                                <p className="text-md text-gray-600 leading-relaxed">
                                     {feature.description}
                                 </p>
                             </>

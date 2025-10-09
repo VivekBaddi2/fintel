@@ -54,7 +54,7 @@ const page = () => {
 
         }
     }
-   
+
     const checkLogin = () => {
         const loggedIn = sessionStorage.getItem("adminLoggedIn");
         if (!loggedIn) window.location.href = "/AdminLogin";
@@ -95,7 +95,7 @@ const page = () => {
                     </div>
                     <div className='btnContainer flex gap-4'>
                         <div>
-                            <button className="border py-2 px-4 rounded-lg bg-gray-900 text-white cursor-pointer hover:bg-gray-800" type="submit">Edit Details</button>
+                            <button className="active:scale-95 border py-2 px-4 rounded-lg bg-gray-900 text-white cursor-pointer hover:bg-gray-800" type="submit">Edit Details</button>
                         </div>
                         {/* <div>
                             <button className="border py-2 px-4 rounded-lg bg-red-600 text-white cursor-pointer hover:bg-red-500" type='button' onClick={deleteAdmin}>Delete</button>

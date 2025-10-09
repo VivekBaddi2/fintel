@@ -15,7 +15,6 @@ const ComponentName = () => {
 
                 <div className="grid grid-cols-1 mt-10 text-center sm:mt-16 sm:grid-cols-2 sm:gap-x-12 gap-y-12 md:grid-cols-3 md:gap-0 xl:mt-24">
 
-                    {/* Support */}
                     <div className="md:p-8 lg:p-14">
                         <svg className="mx-auto" width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M45 29V23C45 10.85 35.15 1 23 1C10.85 1 1 10.85 1 23V29"
@@ -31,7 +30,6 @@ const ComponentName = () => {
                         </p>
                     </div>
 
-                    {/* Sales */}
                     <div className="md:p-8 lg:p-14 md:border-l md:border-gray-200">
                         <svg className="mx-auto" width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M27 27H19V45H27V27Z"
@@ -51,7 +49,6 @@ const ComponentName = () => {
                         </p>
                     </div>
 
-                    {/* Onboarding */}
                     <div className="md:p-8 lg:p-14 md:border-l md:border-gray-200">
                         <svg className="mx-auto" width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M41 1H1V41H41V1Z"
@@ -70,6 +67,12 @@ const ComponentName = () => {
                     </div>
 
                     {/* The rest would follow same pattern... */}
+                </div>
+
+                <div className='mt-8 text-center'>
+                    <a href="/Services">
+                        <button className='border-2 rounded-xl py-4 px-8 text-lg font-bold bg-gray-900 text-white cursor-pointer hover:bg-gray-800 active:scale-95'>Learn More</button>
+                    </a>
                 </div>
             </div>
         </section>

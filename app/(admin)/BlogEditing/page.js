@@ -100,7 +100,7 @@ export default function AdminDashboard() {
       <h1 className="text-3xl font-bold text-gray-800">Blog Editor</h1>
 
       {/* Add/Edit Blog Form */}
-      <div className="bg-white shadow-md rounded-lg p-6">
+      <div className="bg-transparent rounded-lg ">
         <h2 className="text-xl font-semibold mb-4">
           {blogId ? "Edit Blog" : "Add New Blog"}
         </h2>
@@ -114,7 +114,7 @@ export default function AdminDashboard() {
             placeholder="Title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            className="w-full p-3 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-300"
+            className="w-full p-3 mt-2 border rounded-lg focus:outline-none bg-white focus:ring-2 focus:ring-gray-300"
           />
 
           <label htmlFor="blogDescriptionInput" className="font-medium">
@@ -125,7 +125,7 @@ export default function AdminDashboard() {
             placeholder="Description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            className="w-full p-3 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-300"
+            className="w-full p-3 mt-2 border rounded-lg focus:outline-none bg-white focus:ring-2 focus:ring-gray-300"
           />
 
           <label htmlFor="blogContentInput" className="font-medium">
@@ -136,13 +136,13 @@ export default function AdminDashboard() {
             placeholder="Content"
             value={content}
             onChange={(e) => setContent(e.target.value)}
-            className="w-full p-3 mt-2 border rounded-lg h-64 focus:outline-none focus:ring-2 focus:ring-gray-300"
+            className="w-full p-3 mt-2 border rounded-lg h-64 focus:outline-none bg-white focus:ring-2 focus:ring-gray-300"
           />
 
           <div className="flex items-center space-x-4">
             <button
               type="submit"
-              className="bg-gray-900 text-white font-medium px-6 py-2 rounded-lg hover:bg-gray-800 transition cursor-pointer"
+              className="active:scale-95 bg-gray-900 text-white font-medium px-6 py-2 rounded-lg hover:bg-gray-800 transition cursor-pointer"
             >
               {blogId ? "Update Blog" : "Add Blog"}
             </button>

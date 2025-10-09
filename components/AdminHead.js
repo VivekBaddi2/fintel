@@ -10,15 +10,15 @@ const AdminHead = () => {
     }
 
     return (
-        <div className="bg-gray-50 w-[90vw] mx-auto md:px-6">
-            <header className="py-4 md:py-6">
+        <div className="bg-gray-50 w-[100vw]">
+            <header className="w-full py-4 md:py-6">
                 <div className="container px-4 mx-auto sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between">
                         {/* Logo */}
                         <div className="flex-shrink-0">
-                            <a href="/" className="flex rounded">
+                            <a href="/" className="flex rounded ">
                                 <img
-                                    className="h-auto w-[180px] -ml-6 sm:-ml-0 sm:w-auto sm:h-12 md:h-14 lg:h-16"
+                                    className="h-auto w-[200px] -ml-4 sm:-ml-0 sm:h-auto sm:w-48 md:w-48 lg:w-48"
                                     src="/fintel-black-logo.png"
                                     alt="Logo"
                                 />
@@ -87,10 +87,10 @@ const AdminHead = () => {
                                     </div>
                                 )}
                             </div>
-                            <a href="/AdminDashboard" className="inline-flex items-center justify-center px-6 py-3 text-base font-bold text-white bg-gray-900 rounded-xl hover:bg-gray-800">
+                            <a href="/AdminDashboard" className="active:scale-95 inline-flex items-center justify-center px-6 py-3 text-base font-bold text-white bg-gray-900 rounded-xl hover:bg-gray-800">
                                 Dashboard
                             </a>
-                            <a href='/AdminLogin' onClick={logoutSession} className="cursor-pointer inline-flex items-center justify-center px-6 py-3 text-base font-bold text-black bg-transparent border-2 border-gray-900 rounded-xl hover:bg-gray-100">
+                            <a href='/AdminLogin' onClick={logoutSession} className="active:scale-95 cursor-pointer inline-flex items-center justify-center px-6 py-3 text-base font-bold text-black bg-transparent border-2 border-gray-900 rounded-xl hover:bg-gray-100">
                                 Logout
                             </a>
                         </div>
@@ -126,10 +126,10 @@ const AdminHead = () => {
                                             </div>
                                         )}
                                     </div>
-                                    <a href="/AdminDashboard" className="inline-flex items-center justify-center px-6 py-3 text-base font-bold text-white bg-gray-900 rounded-xl hover:bg-gray-800">
+                                    <a href="/AdminDashboard" className="active:scale-95 inline-flex items-center justify-center px-6 py-3 text-base font-bold text-white bg-gray-900 rounded-xl hover:bg-gray-800">
                                         Dashboard
                                     </a>
-                                    <a href="/AdminLogin" onClick={logoutSession} className="inline-flex items-center justify-center px-6 py-3 text-base font-bold text-black border-2 border-gray-900 rounded-xl hover:bg-gray-100">
+                                    <a href="/AdminLogin" onClick={logoutSession} className="active:scale-95 inline-flex items-center justify-center px-6 py-3 text-base font-bold text-black border-2 border-gray-900 rounded-xl hover:bg-gray-100">
                                         Logout
                                     </a>
                                 </div>

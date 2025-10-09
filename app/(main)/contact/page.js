@@ -91,7 +91,7 @@ const ContactSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
         >
-            <section className="text-gray-600 body-font relative w-[90vw] md:px-12 mx-auto">
+            <section className="text-gray-600 body-font relative w-[95] md:w-[90vw] px-1 md:px-12 mx-auto">
                 <div className="container px-5 mx-auto">
                     <BreadCrumb items={[
                         { label: 'Home', href: '/' },
@@ -116,7 +116,7 @@ const ContactSection = () => {
 
                         <div className='lg:w-1/3'>
                             <div className="lg:h-fit bg-gray-50 flex flex-col md:ml-auto w-full md:py-2 mt-8 md:mt-0">
-                                <h2 className="text-gray-900 text-lg lg:text-2xl mb-1 font-medium title-font">Contact Us</h2>
+                                <h2 className="text-gray-900 text-lg lg:text-2xl mb-1 font-bold title-font">Contact Us</h2>
                                 <p className="leading-relaxed mb-5 text-gray-600">
                                     Reach out to us with any questions, ideas, or inquiries. We're here to help and happy to hear from you.
                                 </p>
@@ -169,7 +169,7 @@ const ContactSection = () => {
                                     <button
                                         type='submit'
                                         disabled={isSubmitting}
-                                        className={`w-full text-white border-0 py-2 px-6 mt-1 rounded text-lg ${isSubmitting ? 'bg-gray-600 cursor-not-allowed' : 'bg-gray-900 hover:bg-gray-800'
+                                        className={`active:scale-95 cursor-pointer w-full text-white border-0 py-2 px-6 mt-1 rounded text-lg ${isSubmitting ? 'bg-gray-600 cursor-not-allowed' : 'bg-gray-900 hover:bg-gray-800'
                                             }`}
                                     >
                                         {isSubmitting ? 'Sending...' : 'Submit'}

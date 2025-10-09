@@ -69,7 +69,7 @@ export default async function ServicePage({ params }) {
                         <img src={service.img} alt="image" loading="lazy" className="w-fit lg:w-[90vw] rounded-lg " />
                     </div>
                     <div>
-                        <h1 className="text-3xl font-semibold">{service.title}</h1>
+                        <h1 className="text-2xl md:text-3xl font-semibold ">{service.title}</h1>
                     </div>
                     <div>
                         {service.content.split("\n").map((para, i) => (

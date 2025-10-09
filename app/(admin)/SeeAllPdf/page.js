@@ -176,7 +176,7 @@ const page = () => {
                         setPrev(newVisible - 6);
                     }}
                     disabled={visible <= 6} // Disable on first page
-                    className="bg-white px-4 py-2 border rounded-lg disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+                    className="active:scale-95 bg-white px-4 py-2 border rounded-lg disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
                 >
                     Previous
                 </button>
@@ -188,7 +188,7 @@ const page = () => {
                         setVisible(newVisible);
                     }}
                     disabled={visible >= pdfs.length} // Disable on last page
-                    className="bg-white px-4 py-2 border rounded-lg disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+                    className="active:scale-95 bg-white px-4 py-2 border rounded-lg disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
                 >
                     Next
                 </button>

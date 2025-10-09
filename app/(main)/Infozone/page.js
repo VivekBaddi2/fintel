@@ -69,11 +69,14 @@ export default function PdfList() {
         </h2>
 
         {/* Search Input */}
-        <div className="flex mb-12">
+        <div className="flex items-center mb-12 bg-white w-fit shadow-md border-gray-300 rounded-lg">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-search m-4" viewBox="0 0 16 16">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+          </svg>
           <input
             type="text"
             placeholder="Search PDFs..."
-            className="w-96 border border-gray-300 rounded-lg px-4 py-2 focus:ring-1 focus:ring-gray-900 focus:outline-none"
+            className="w-64 md:w-84 bg-white rounded-lg px-2 py-3 focus:outline-none"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
@@ -88,23 +91,29 @@ export default function PdfList() {
             <div
               key={pdf._id}
               onClick={() => findPdf(pdf)}
-              className="h-[200px]  flex items-center p-5 border border-gray-200 rounded-2xl shadow-sm bg-white 
-                       hover:shadow-lg hover:scale-105 transition-all cursor-pointer group"
+              className="h-[200px] flex items-center p-5 border border-gray-200 rounded-2xl shadow-sm bg-white 
+             hover:shadow-lg hover:scale-105 transition-all cursor-pointer group overflow-hidden"
             >
-              <div className="h-full">
+              <div className="h-full w-full">
                 <div className="flex h-full">
-                  <FaFilePdf className="flex-shrink-0 scale-90 text-red-600 text-5xl mr-5 group-hover:text-red-700 transition " />
-                  <div className="h-full flex flex-col justify-between">
-                    <div className="flex flex-col gap-1.5">
-                      <p title={pdf.title} className="flex items-center text-lg md:line-clamp-1 font-semibold text-gray-900 group-hover:underline">
+                  <FaFilePdf className="flex-shrink-0 scale-90 text-red-600 text-5xl mr-5 group-hover:text-red-700 transition" />
+                  <div className="h-full flex flex-col justify-between overflow-hidden">
+                    <div className="flex flex-col gap-1.5 overflow-hidden">
+                      {/* Title with ellipsis */}
+                      <p
+                        title={pdf.title}
+                        className="text-lg font-semibold text-gray-900 group-hover:underline  line-clamp-2"
+                      >
                         {pdf.title}
                       </p>
-                      <p className=" text-gray-500 line-clamp-4 text-ellipsis overflow-hidden">
+
+                      {/* Description with 3-4 line clamp */}
+                      <p className="text-gray-500 text-sm line-clamp-3 sm:line-clamp-4 overflow-hidden text-ellipsis">
                         {pdf.description}
                       </p>
                     </div>
                     <div className="h-fit flex items-center">
-                      <p className="h-[20%] flex items-center text-gray-500 text-sm">
+                      <p className="text-gray-500 text-sm">
                         Click to request this PDF via email
                       </p>
                     </div>
@@ -112,6 +121,7 @@ export default function PdfList() {
                 </div>
               </div>
             </div>
+
           ))}
         </div>
 

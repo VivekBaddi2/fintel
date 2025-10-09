@@ -11,7 +11,7 @@ const ServicesPage = () => {
             whileInView={{ opacity: 1, y: 0 }} // Animate to visible and normal position when in view
             transition={{ duration: 0.8, ease: "easeOut" }} // Transition properties
         >
-            <section className="text-gray-600 body-font w-[90vw] mx-auto md:px-12">
+            <section className="text-gray-600 body-font w-[100vw] md:w-[90vw] mx-auto px-1 md:px-12">
                 <div className="container px-5 mx-auto">
                     <BreadCrumb items={[
                         { label: 'Home', href: '/' },
@@ -74,7 +74,7 @@ const ServicesPage = () => {
                             },
                         ].map((service, index) => (
                             <div key={index} className="p-4 w-fit lg:w-1/3">
-                                <div className="flex rounded-lg h-full bg-gray-100 p-8 flex-col">
+                                <div className="flex rounded-lg h-[290px] bg-gray-100 p-8 flex-col overflow-hidden">
                                     <div className="flex items-center mb-3">
                                         <div className="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-black text-white flex-shrink-0">
                                             <svg
@@ -89,18 +89,28 @@ const ServicesPage = () => {
                                                 <path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"></path>
                                             </svg>
                                         </div>
-                                        <h2 className="text-gray-900 text-lg title-font font-medium">{service.title}</h2>
+                                        <h2 className="text-gray-900 text-lg title-font font-medium line-clamp-2">
+                                            {service.title}
+                                        </h2>
                                     </div>
-                                    <div className="flex-grow">
-                                        <p className="leading-relaxed text-base">{service.description}</p>
+
+                                    {/* Description with line clamp */}
+                                    <div className="flex-grow overflow-hidden">
+                                        <p className="leading-relaxed text-base text-gray-700 line-clamp-4 overflow-hidden text-ellipsis">
+                                            {service.description}
+                                        </p>
                                     </div>
-                                    <div className='mt-4'>
+
+                                    <div className="mt-4">
                                         <a href={`/Services/${service.id}/${service.slug}`}>
-                                            <button className='bg-gray-900 px-4 py-2 text-white font-semibold cursor-pointer rounded-lg hover:bg-gray-800'>Read more</button>
+                                            <button className="active:scale-95 bg-gray-900 px-4 py-2 text-white font-semibold cursor-pointer rounded-lg hover:bg-gray-800">
+                                                Read more
+                                            </button>
                                         </a>
                                     </div>
                                 </div>
                             </div>
+
                         ))}
                     </div>
                 </div>

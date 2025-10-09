@@ -59,7 +59,7 @@ const ComponentName = () => {
                                     </div>
 
                                     <div className="flex items-center mt-8">
-                                        <img className="flex-shrink-0 object-cover rounded-full w-11 h-11" src="https://cdn.rareblocks.xyz/collection/clarity/images/testimonial/4/avatar-male-1.png" alt="" />
+                                        <img loading='lazy' className="flex-shrink-0 object-cover rounded-full w-11 h-11" src="/avatar-male-1.png" alt="" />
                                         <div className="ml-4">
                                             <p className="text-base font-bold text-gray-900 font-pj">Suresh Kumar</p>
                                             <p className="mt-0.5 text-sm font-pj text-gray-600">Founder of InfiniTech Solutions</p>
@@ -105,7 +105,7 @@ const ComponentName = () => {
                                     </div>
 
                                     <div className="flex items-center mt-8">
-                                        <img className="flex-shrink-0 object-cover rounded-full w-11 h-11" src="https://cdn.rareblocks.xyz/collection/clarity/images/testimonial/4/avatar-male-2.png" alt="" />
+                                        <img loading='lazy' className="flex-shrink-0 object-cover rounded-full w-11 h-11" src="/avatar-male-2.png" alt="" />
                                         <div className="ml-4">
                                             <p className="text-base font-bold text-gray-900 font-pj">Lakshmi Narayanan</p>
                                             <p className="mt-0.5 text-sm font-pj text-gray-600">Managing Partner at Narayanan & Co.</p>
@@ -151,7 +151,7 @@ const ComponentName = () => {
                                     </div>
 
                                     <div className="flex items-center mt-8">
-                                        <img className="flex-shrink-0 object-cover rounded-full w-11 h-11" src="https://cdn.rareblocks.xyz/collection/clarity/images/testimonial/4/avatar-female.png" alt="" />
+                                        <img loading='lazy' className="flex-shrink-0 object-cover rounded-full w-11 h-11" src="/avatar-female.png" alt="" />
                                         <div className="ml-4">
                                             <p className="text-base font-bold text-gray-900 font-pj">Deepa Ramesh</p>
                                             <p className="mt-0.5 text-sm font-pj text-gray-600">CEO of Southern Edge Ventures</p>

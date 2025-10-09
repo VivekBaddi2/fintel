@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image';
 import React, { useState } from 'react'
 
 const Header = () => {
@@ -10,15 +11,23 @@ const Header = () => {
                 <div className="container px-4 mx-auto sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between">
                         {/* Logo */}
-                        <div className="flex-shrink-0">
-                            <a href="/" className="flex rounded ">
-                                <img
-                                    className="h-auto w-[180px] -ml-6 sm:-ml-0 sm:w-auto sm:h-12 md:h-14 lg:h-16"
-                                    src="/fintel-black-logo.png"
-                                    alt="Logo"
-                                />
+                        <div className="-ml-7 sm:-ml:0 flex-shrink-0">
+                            <a href="/" className="block rounded">
+                                {/* ✅ The parent must be relative AND have height */}
+                                <div className="relative w-[200px] h-16 sm:w-48 md:w-52 lg:w-50">
+                                    <Image
+                                        src="/fintel-black-logo.png"
+                                        alt="Fintel Logo"
+                                        fill
+                                        className="object-contain"
+                                        priority
+                                        sizes="(max-width: 640px) 200px, (max-width: 768px) 12rem, (max-width: 1024px) 13rem, 14rem"
+                                    />
+                                </div>
                             </a>
                         </div>
+
+
 
                         {/* Mobile menu button */}
                         <div className="flex lg:hidden">
@@ -64,7 +73,7 @@ const Header = () => {
 
                         {/* CTA button */}
                         <div className="hidden lg:ml-auto lg:flex items-center lg:space-x-10">
-                            <a href="/contact" className="inline-flex items-center justify-center px-6 py-3 text-sm font-bold text-white bg-gray-900 rounded-xl hover:bg-gray-800">
+                            <a href="/contact" className="active:scale-95 inline-flex items-center justify-center px-6 py-3 text-sm font-bold text-white bg-gray-900 rounded-xl hover:bg-gray-800">
                                 Get in touch
                             </a>
                         </div>

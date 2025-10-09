@@ -49,7 +49,7 @@ export default function BlogPost() {
     return (
         <article className="w-[90vw] md:w-[80vw] mx-auto p-2">
             {/* Blog title */}
-            <h1 className="text-3xl md:text-4xl font-bold mb-6 mt-2 text-justify">{blog.title}</h1>
+            <h1 className="text-2xl md:text-4xl font-bold mb-4 mt-2">{blog.title}</h1>
 
             {/* Last updated date */}
             <p className="text-sm text-gray-500 mb-2">

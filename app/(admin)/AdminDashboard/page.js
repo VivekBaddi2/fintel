@@ -114,12 +114,12 @@ export default function AdminDashboard() {
   if (loading) return <p className="text-center mt-24 text-gray-500">Loading...</p>;
 
   return (
-    <div className="w-[90vw] md:w-[80vw] mx-auto px-2 space-y-4 md:space-y-8">
-      <h1 className="text-2xl md:text-3xl font-bold text-gray-800">Admin Dashboard</h1>
+    <div className="w-[90vw] md:w-[80vw] mx-auto px-2 space-y-8 md:space-y-8">
+      <h1 className="text-xl md:text-3xl font-bold text-gray-800">Admin Dashboard</h1>
 
-      <div className="h-[50vh] w-full  rounded-xl bg-white shadow-md md:flex hidden">
+      <div className="[@media(min-width:1024px)_and_(max-width:1366px)_and_(orientation:portrait)]:h-[450px] md:h-[30vh] lg:h-[50vh] w-full  rounded-xl bg-white shadow-md md:flex hidden">
         <div className="w-1/3">
-          <img src={"/FintelAdminBanner.png"} alt="fintel banner" className="h-full w-[360px] object-cover rounded-tl-xl rounded-bl-xl" />
+          <img src={"/Fintel.png"} alt="fintel banner" className="h-full w-[360px] object-cover rounded-tl-xl rounded-bl-xl" />
         </div>
         <div className="w-2/3 p-8 flex flex-col justify-center items-center">
           <div>
@@ -131,11 +131,11 @@ export default function AdminDashboard() {
         </div>
       </div>
 
-      <div className="latestBlogsDiv">
+      <div className="latestBlogsDiv mb-12">
         <div className="flex justify-between items-center">
-          <h2 className="text-lg md:text-2xl font-bold">Your latest blogs</h2>
+          <h2 className="text-md md:text-2xl font-bold">Your latest blogs</h2>
           <a href="/SeeAllBlog">
-            <p className="underline text-sm md:text-md">See all</p>
+            <p className="underline text-sm md:text-lg">See all</p>
           </a>
         </div>
 
@@ -169,7 +169,7 @@ export default function AdminDashboard() {
                       </svg>
                       <h2
                         title={blog.title}
-                        className="text-lg font-semibold text-gray-900 line-clamp-1"
+                        className="text-lg font-semibold text-gray-900 line-clamp-2"
                       >
                         {blog.title}
                       </h2>
@@ -186,18 +186,18 @@ export default function AdminDashboard() {
                     {/* Buttons at bottom */}
                     <div className="mt-auto pt-4 flex items-center gap-3">
                       <a href={"/BlogEditing/?id=" + blog._id} className="w-full sm:w-auto">
-                        <button className="flex-shrink-0 w-full md:h-full h-12 sm:w-auto px-3 py-1 md:px-4 md:py-2 rounded-lg bg-gray-900 text-white text-sm font-medium hover:bg-gray-800 transition cursor-pointer">
+                        <button className="active:scale-95 flex-shrink-0 w-full md:h-full h-12 sm:w-auto px-3 py-1 md:px-4 md:py-2 rounded-lg bg-gray-900 text-white text-sm font-medium hover:bg-gray-800 transition cursor-pointer">
                           Edit Post
                         </button>
                       </a>
                       <a href={"/BlogPost/?id=" + blog._id} className="w-full sm:w-auto">
-                        <button className="flex-shrink-0 w-full md:h-full h-12 sm:w-auto px-3 py-1 md:px-4 md:py-2 rounded-lg border border-gray-300 text-gray-700 text-sm font-medium hover:bg-gray-100 transition cursor-pointer">
+                        <button className="active:scale-95 flex-shrink-0 w-full md:h-full h-12 sm:w-auto px-3 py-1 md:px-4 md:py-2 rounded-lg border border-gray-300 text-gray-700 text-sm font-medium hover:bg-gray-100 transition cursor-pointer">
                           View Post
                         </button>
                       </a>
                       <button
                         onClick={() => deleteBlogBtn(blog._id)}
-                        className=" w-full h-12 md:h-full  sm:w-auto px-3 py-1 md:px-4 md:py-2 rounded-lg bg-red-500 text-white text-sm font-medium hover:bg-red-600 transition cursor-pointer"
+                        className="active:scale-95 w-full h-12 md:h-full  sm:w-auto px-3 py-1 md:px-4 md:py-2 rounded-lg bg-red-500 text-white text-sm font-medium hover:bg-red-600 transition cursor-pointer"
                       >
                         Delete
                       </button>
@@ -213,11 +213,11 @@ export default function AdminDashboard() {
       </div>
 
 
-      <div className="uploadedPdfsDiv">
+      <div className="uploadedPdfsDiv mb-12">
         <div className="flex justify-between items-center">
-          <h2 className="text-lg md:text-2xl font-bold">Your uploaded PDFs</h2>
+          <h2 className="text-md md:text-2xl font-bold">Your uploaded PDFs</h2>
           <a href="/SeeAllPdf">
-            <p className="underline text-sm md:text-md">See all</p>
+            <p className="underline text-sm md:text-lg">See all</p>
           </a>
         </div>
 
@@ -245,7 +245,7 @@ export default function AdminDashboard() {
                       </svg>
                       <h2
                         title={pdf.title}
-                        className="text-lg font-semibold text-gray-900 line-clamp-1"
+                        className="text-lg font-semibold text-gray-900 line-clamp-2"
                       >
                         {pdf.title}
                       </h2>
@@ -262,18 +262,18 @@ export default function AdminDashboard() {
                     {/* Buttons at bottom */}
                     <div className="mt-auto pt-4 flex gap-3">
                       <a href={"/EditPdf?id=" + pdf._id} className="w-full sm:w-auto">
-                        <button className="flex-shrink-0 w-full h-12 md:h-full sm:w-auto px-3 py-1 md:px-4 md:py-2 rounded-lg bg-gray-900 text-white text-sm font-medium hover:bg-gray-800 transition cursor-pointer">
+                        <button className="active:scale-95 flex-shrink-0 w-full h-12 md:h-full sm:w-auto px-3 py-1 md:px-4 md:py-2 rounded-lg bg-gray-900 text-white text-sm font-medium hover:bg-gray-800 transition cursor-pointer">
                           Edit PDF
                         </button>
                       </a>
                       <a href={pdf.path} target="_blank" className="w-full sm:w-auto">
-                        <button className="flex-shrink-0 w-full h-12 md:h-full sm:w-auto px-3 py-1 md:px-4 md:py-2 rounded-lg border border-gray-300 text-gray-700 text-sm font-medium hover:bg-gray-100 transition cursor-pointer">
+                        <button className="active:scale-95 flex-shrink-0 w-full h-12 md:h-full sm:w-auto px-3 py-1 md:px-4 md:py-2 rounded-lg border border-gray-300 text-gray-700 text-sm font-medium hover:bg-gray-100 transition cursor-pointer">
                           View PDF
                         </button>
                       </a>
                       <button
                         onClick={() => deletePDFBtn(pdf._id)}
-                        className="w-full h-12 md:h-full sm:w-auto px-3 py-1 md:px-4 md:py-2 rounded-lg bg-red-500 text-white text-sm font-medium hover:bg-red-600 transition cursor-pointer"
+                        className="active:scale-95 w-full h-12 md:h-full sm:w-auto px-3 py-1 md:px-4 md:py-2 rounded-lg bg-red-500 text-white text-sm font-medium hover:bg-red-600 transition cursor-pointer"
                       >
                         Delete
                       </button>

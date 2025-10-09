@@ -18,7 +18,7 @@ const page = () => {
                         { label: 'About', href: '/AboutUs/whoweare' },
                         { label: 'Who We Are' }
                     ]} />
-                    <AboutPageNav />
+                    {/* <AboutPageNav /> */}
                     <div className="content-one mb-8">
                         <h1 className='text-3xl font-semibold mb-4'>Welcome to Fintel Solutions</h1>
                         <p className='text-justify'>Discovering oneself can be a lifelong adventure. Exploring the ever unfolding new "you" is a fascinating experience. Our dream has been to look for new possibilities, new spaces, and new methodologies to understand people and organizational dynamics and dive deep into relationship spaces. Having worked as independent management consultants for 5 years, our hunger for new horizons made us push our boundaries. That gave birth to Fintel Solutions, a Private Limited Company headquartered at Hubli, comprising of people that we resonate with.</p>
