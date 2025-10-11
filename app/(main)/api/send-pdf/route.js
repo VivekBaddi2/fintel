@@ -9,9 +9,16 @@ export async function POST(req) {
 
     // PDF path
     const filePath = path.join(process.cwd(), "public", "uploads", pdfName);
+    if (!fs.existsSync(filePath)) {
+      return NextResponse.json(
+        { success: false, error: "PDF file not found" },
+        { status: 404 }
+      );
+    }
+
     const pdfBuffer = fs.readFileSync(filePath);
 
-    // Get transporter with OAuth2
+    // Get transporter (SMTP)
     const transporter = await getTransporter();
 
     // Email options
@@ -33,7 +40,7 @@ export async function POST(req) {
 
     return NextResponse.json({ success: true, message: "PDF sent to email!" });
   } catch (error) {
-    console.error("Gmail Error:", error);
+    console.error("SMTP Error:", error);
     return NextResponse.json(
       { success: false, error: "Failed to send email" },
       { status: 500 }

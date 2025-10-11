@@ -91,7 +91,7 @@ export default function PdfList() {
             <div
               key={pdf._id}
               onClick={() => findPdf(pdf)}
-              className="h-[200px] flex items-center p-5 border border-gray-200 rounded-2xl shadow-sm bg-white 
+              className="h-[150px] flex items-center p-5 border border-gray-200 rounded-2xl shadow-sm bg-white 
              hover:shadow-lg hover:scale-105 transition-all cursor-pointer group overflow-hidden"
             >
               <div className="h-full w-full">
@@ -113,7 +113,7 @@ export default function PdfList() {
                       </p>
                     </div>
                     <div className="h-fit flex items-center">
-                      <p className="text-gray-500 text-sm">
+                      <p className="text-gray-900 text-sm">
                         Click to request this PDF via email
                       </p>
                     </div>
