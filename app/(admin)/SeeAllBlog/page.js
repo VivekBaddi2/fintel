@@ -132,12 +132,12 @@ const Page = () => {
 
                                     {/* Buttons at bottom */}
                                     <div className="mt-auto pt-4 flex items-center gap-3">
-                                        <a href={"/BlogEditing/?id=" + blog._id} className="w-full sm:w-auto">
+                                        <a href={"/BlogEditing/"+ blog._id} className="w-full sm:w-auto">
                                             <button className="flex-shrink-0 w-full md:h-full h-12 sm:w-auto px-3 py-1 md:px-4 md:py-2 rounded-lg bg-gray-900 text-white text-sm font-medium hover:bg-gray-800 transition cursor-pointer">
                                                 Edit Post
                                             </button>
                                         </a>
-                                        <a href={"/BlogPost/?id=" + blog._id} className="w-full sm:w-auto">
+                                        <a href={"/BlogPost/" + blog._id} className="w-full sm:w-auto">
                                             <button className="flex-shrink-0 w-full md:h-full h-12 sm:w-auto px-3 py-1 md:px-4 md:py-2 rounded-lg border border-gray-300 text-gray-700 text-sm font-medium hover:bg-gray-100 transition cursor-pointer">
                                                 View Post
                                             </button>

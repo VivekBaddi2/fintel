@@ -142,7 +142,7 @@ const Page = () => {
 
                                     {/* Buttons at bottom */}
                                     <div className="mt-auto pt-4 flex gap-3">
-                                        <a href={"/EditPdf?id=" + pdf._id} className="w-full sm:w-auto">
+                                        <a href={"/EditPdf/" + pdf._id} className="w-full sm:w-auto">
                                             <button className="flex-shrink-0 w-full h-12 md:h-full sm:w-auto px-3 py-1 md:px-4 md:py-2 rounded-lg bg-gray-900 text-white text-sm font-medium hover:bg-gray-800 transition cursor-pointer">
                                                 Edit PDF
                                             </button>

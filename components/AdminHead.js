@@ -62,8 +62,8 @@ const AdminHead = () => {
 
 
                         <div className="hidden lg:ml-auto lg:flex lg:items-center lg:space-x-10 text-gray-700 hover:text-gray-900">
-                            <a href="/EditPdf" className='text-md font-medium hover:underline hover:font-medium'>Add PDF</a>
-                            <a href="/BlogEditing" className='text-md font-medium hover:underline hover:font-medium'>Add Blog</a>
+                            <a href="/EditPdf/" className='text-md font-medium hover:underline hover:font-medium'>Add PDF</a>
+                            <a href="/BlogEditing/" className='text-md font-medium hover:underline hover:font-medium'>Add Blog</a>
                             {/* dropdown here */}
                             <div
                                 className="relative"

@@ -78,7 +78,7 @@ export default function BlogsPage() {
             <p className="text-gray-600 mb-4  line-clamp-3">
               {blog.description}
             </p>
-            <a href={`/UBlogPost/?id=${blog._id}`}>
+            <a href={`/UBlogPost/${blog._id}`}>
               <button className="active:scale-95 cursor-pointer w-fit bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition ">
                 Read more
               </button>
