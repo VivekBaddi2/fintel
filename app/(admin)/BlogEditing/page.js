@@ -1,6 +1,8 @@
 // /app/(admin)/BlogEditing/page.js
 "use client"; // MUST be the first line
 
+export const dynamic = "force-dynamic"; // <-- add this
+
 import { useSearchParams } from "next/navigation";
 import { useState, useEffect } from "react";
 import { ToastContainer, toast, Slide } from "react-toastify";
