@@ -1,12 +1,12 @@
 "use client"
-import { useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
+// import { useSearchParams } from 'next/navigation';
+import { use, useEffect, useState } from 'react';
 
-export default function BlogPost() {
+export default function BlogPost({ params }) {
 
-    const searchParams = useSearchParams();
-    const blogId = searchParams.get('id')
-
+    // const searchParams = useSearchParams();
+    const blogId = use(params).id;
+    console.log(blogId)
     const [blog, setBlog] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);

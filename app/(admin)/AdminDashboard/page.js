@@ -190,7 +190,7 @@ export default function AdminDashboard() {
                           Edit Post
                         </button>
                       </a>
-                      <a href={"/BlogPost/?id=" + blog._id} className="w-full sm:w-auto">
+                      <a href={"/BlogPost/" + blog._id} className="w-full sm:w-auto">
                         <button className="active:scale-95 flex-shrink-0 w-full md:h-full h-12 sm:w-auto px-3 py-1 md:px-4 md:py-2 rounded-lg border border-gray-300 text-gray-700 text-sm font-medium hover:bg-gray-100 transition cursor-pointer">
                           View Post
                         </button>
