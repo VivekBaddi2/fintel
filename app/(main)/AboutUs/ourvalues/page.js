@@ -3,7 +3,7 @@ import BreadCrumb from '@/components/BreadCrumb'
 import { motion } from 'framer-motion'
 import React from 'react'
 
-const page = () => {
+const Page = () => {
     return (
         <motion.div
             initial={{ opacity: 0, y: 50 }} // Initial state (invisible and slightly down)
@@ -74,4 +74,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page

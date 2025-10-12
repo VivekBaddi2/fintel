@@ -3,7 +3,7 @@ import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
 import { toast } from 'react-toastify';
 
-const page = () => {
+const Page = () => {
 
     const [pdfs, setPdfs] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -198,4 +198,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page

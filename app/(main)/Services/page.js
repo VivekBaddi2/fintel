@@ -22,9 +22,9 @@ const ServicesPage = () => {
                         <p className="mt-4 text-justify">
                             Fintel Solutions delivers a full range of Taxation, Compliance and Management Consultancy Services. We are first generation professionals with extensive skills and industry expertise, providing cost-effective financial solutions.
 
-                            Our work doesn't end when an assignment ends. We help implement solutions and we follow up to see how the recommendations are working and what impact they're having. As a result, our clients are free to focus more time, energy, and resources on building their business.
+                            Our work doesn&apos;t end when an assignment ends. We help implement solutions and we follow up to see how the recommendations are working and what impact they&apos;re having. As a result, our clients are free to focus more time, energy, and resources on building their business.
 
-                            We stay connected to our clients because we believe deeply in doing what's best for them — not just today, but throughout our relationship with them.
+                            We stay connected to our clients because we believe deeply in doing what&apos;s best for them - not just today, but throughout our relationship with them.
                         </p>
                     </div>
 

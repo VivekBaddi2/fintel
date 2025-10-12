@@ -4,7 +4,7 @@ import BreadCrumb from '@/components/BreadCrumb'
 import { motion } from "framer-motion";
 import React from 'react'
 
-const page = () => {
+const Page = () => {
     return (
         <motion.div
             initial={{ opacity: 0, y: 50 }} // Initial state (invisible and slightly down)
@@ -21,7 +21,7 @@ const page = () => {
                     {/* <AboutPageNav /> */}
                     <div className="content-one mb-8">
                         <h1 className='text-3xl font-semibold mb-4'>Welcome to Fintel Solutions</h1>
-                        <p className='text-justify'>Discovering oneself can be a lifelong adventure. Exploring the ever unfolding new "you" is a fascinating experience. Our dream has been to look for new possibilities, new spaces, and new methodologies to understand people and organizational dynamics and dive deep into relationship spaces. Having worked as independent management consultants for 5 years, our hunger for new horizons made us push our boundaries. That gave birth to Fintel Solutions, a Private Limited Company headquartered at Hubli, comprising of people that we resonate with.</p>
+                        <p className='text-justify'>Discovering oneself can be a lifelong adventure. Exploring the ever unfolding new &quot;you&quot; is a fascinating experience. Our dream has been to look for new possibilities, new spaces, and new methodologies to understand people and organizational dynamics and dive deep into relationship spaces. Having worked as independent management consultants for 5 years, our hunger for new horizons made us push our boundaries. That gave birth to Fintel Solutions, a Private Limited Company headquartered at Hubli, comprising of people that we resonate with.</p>
                     </div>
 
                     <div className="content-two">
@@ -30,7 +30,7 @@ const page = () => {
                             Fintel Solutions is a multi-disciplinary consulting company, focused on providing the young & seasoned entrepreneurs a one stop customized solutions for their Taxation, Finance and Compliance Management queries.
                             <br /><br />
 
-                            Fintel's team includes professionals, & experienced specialists of varied fields who have a sole objective to help you to concentrate on developing your business wherein we take care of your finance, taxation and compliance management. Fintel's delivery is based on thoroughly researched methodology which starts with understanding the needs of every client dynamics.
+                            Fintel&apos;s team includes professionals, & experienced specialists of varied fields who have a sole objective to help you to concentrate on developing your business wherein we take care of your finance, taxation and compliance management. Fintel&apos;s delivery is based on thoroughly researched methodology which starts with understanding the needs of every client dynamics.
                             <br /><br />
 
                             In order to facilitate our clients to be the best in their respective fields, we utilize state of the art technology, services and solutions. While suggesting or implementing any new concept for a particular business, we foresee all the impacts of that concept on that specific business.
@@ -52,4 +52,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page

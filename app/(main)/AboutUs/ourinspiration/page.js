@@ -4,7 +4,7 @@ import Image from 'next/image'
 import React from 'react'
 import { motion } from "framer-motion";
 
-const page = () => {
+const Page = () => {
     return (
         <motion.div
             initial={{ opacity: 0, y: 50 }} // Initial state (invisible and slightly down)
@@ -70,4 +70,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page

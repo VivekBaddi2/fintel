@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const page = () => {
+const Page = () => {
     const [file, setFile] = useState(null);
     const [title, setTitle] = useState('');
     const [path, setPath] = useState('');
@@ -132,4 +132,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default Page;

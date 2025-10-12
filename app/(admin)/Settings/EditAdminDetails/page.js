@@ -1,8 +1,7 @@
 "use client"
-import { get } from 'mongoose';
 import React, { useEffect, useState } from 'react'
 
-const page = () => {
+const Page = () => {
     const [id, setId] = useState(null);
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -110,9 +109,9 @@ const page = () => {
                 <div className='border bg-gray-100 text-justify text-gray-800 p-8'>
                     <h2 className='text-lg font-semibold mb-2'>Note</h2>
                     <ul className='font-light text-sm list-disc list-inside text-justify'>
-                        <li>If you wish to only change the username, then just write your new username in the "Change Username" field and enter your existing password then press "Submit"</li>
-                        <li>If you wish to only change the password, then just write your new password in the "Change Password" field and enter your existing username then press "Submit"</li>
-                        <li>If you wish to change both username and password, then write your new username in the "Change Username" field and your new password in the "Change Password" field then press "Submit"</li>
+                        <li>If you wish to only change the username, then just write your new username in the &quot;Change Username&quot; field and enter your existing password then press &quot;Submit&quot;</li>
+                        <li>If you wish to only change the password, then just write your new password in the &quot;Change Password&quot; field and enter your existing username then press &quot;Submit&quot;</li>
+                        <li>If you wish to change both username and password, then write your new username in the &quot;Change Username&quot; field and your new password in the &quot;Change Password&quot; field then press &quot;Submit&quot;</li>
                     </ul>
                 </div>
             </section>
@@ -120,4 +119,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page
