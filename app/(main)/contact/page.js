@@ -118,7 +118,7 @@ const ContactSection = () => {
                             <div className="lg:h-fit bg-gray-50 flex flex-col md:ml-auto w-full md:py-2 mt-8 md:mt-0">
                                 <h2 className="text-gray-900 text-lg lg:text-2xl mb-1 font-bold title-font">Contact Us</h2>
                                 <p className="leading-relaxed mb-5 text-gray-600">
-                                    Reach out to us with any questions, ideas, or inquiries. We're here to help and happy to hear from you.
+                                    Reach out to us with any questions, ideas, or inquiries. We&apos;re here to help and happy to hear from you.
                                 </p>
 
                                 {/* Inline status message */}
