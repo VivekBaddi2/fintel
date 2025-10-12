@@ -1,4 +1,5 @@
 // app/services/[id]/[slug]/page.js
+"use client"
 import BreadCrumb from "@/components/BreadCrumb";
 import { notFound } from "next/navigation";
 
