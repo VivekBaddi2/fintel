@@ -8,7 +8,7 @@ const BlogEditorClient = dynamic(
   { ssr: false } // <- prevents server-side rendering
 );
 
-export const dynamic = "force-dynamic"; // optional safety
+// export const dynamic = "force-dynamic"; // optional safety
 
 export default function BlogEditingPage() {
   return <BlogEditorClient />;
