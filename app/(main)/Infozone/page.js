@@ -94,25 +94,25 @@ export default function PdfList() {
               className="h-[150px] flex items-center p-5 border border-gray-200 rounded-2xl shadow-sm bg-white 
              hover:shadow-lg hover:scale-105 transition-all cursor-pointer group overflow-hidden"
             >
-              <div className="h-full w-full">
+              <div className="h-full w-full ">
                 <div className="flex h-full">
                   <FaFilePdf className="flex-shrink-0 scale-90 text-red-600 text-5xl mr-5 group-hover:text-red-700 transition" />
-                  <div className="h-full flex flex-col justify-between overflow-hidden">
-                    <div className="flex flex-col gap-1.5 overflow-hidden">
+                  <div className="h-fit flex flex-col justify-between overflow-hidden">
+                    <div className="flex flex-col gap-1.5 h-full">
                       {/* Title with ellipsis */}
                       <p
                         title={pdf.title}
-                        className="text-lg font-semibold text-gray-900 group-hover:underline  line-clamp-2"
+                        className="text-lg font-semibold text-gray-900 group-hover:underline line-clamp-1 "
                       >
                         {pdf.title}
                       </p>
 
                       {/* Description with 3-4 line clamp */}
-                      <p className="text-gray-500 text-sm line-clamp-3 sm:line-clamp-4 overflow-hidden text-ellipsis">
+                      <p className=" text-gray-500 text-sm line-clamp-3  overflow-hidden text-ellipsis">
                         {pdf.description}
                       </p>
                     </div>
-                    <div className="h-fit flex items-center">
+                    <div className="h-fit mt-2 flex items-center">
                       <p className="text-gray-900 text-sm">
                         Click to request this PDF via email
                       </p>
