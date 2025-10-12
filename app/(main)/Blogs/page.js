@@ -66,7 +66,7 @@ export default function BlogsPage() {
       <div className="w-fit place-items-center md:w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-8 mx-auto">
 
         {filteredBlogs.slice(prev, visible).map((blog) => (
-          <div key={blog._id} className="w-[90vw] md:w-full bg-white flex flex-col justify-around  border border-gray-200 shadow-md transform hover:scale-105 hover:shadow-lg transition rounded-xl p-6">
+          <div key={blog._id} className="w-[90vw] h-full md:w-full bg-white flex flex-col justify-around  border border-gray-200 shadow-md transform hover:scale-105 hover:shadow-lg transition rounded-xl p-6">
             <div className="flex items-center mb-4 ">
               <svg xmlns="http://www.w3.org/2000/svg" enableBackground="new 0 0 24 24" viewBox="0 0 24 24" className="w-6 h-6 text-gray-700 flex-shrink-0" id="document-layout-left">
                 <path fill="#000000" d="M13,8h8c0.6,0,1-0.4,1-1s-0.4-1-1-1h-8c-0.6,0-1,0.4-1,1S12.4,8,13,8z M21,10h-8c-0.6,0-1,0.4-1,1s0.4,1,1,1h8c0.6,0,1-0.4,1-1S21.6,10,21,10z M3,12h6c0.6,0,1-0.4,1-1V5c0-0.6-0.4-1-1-1H3C2.4,4,2,4.4,2,5v6C2,11.6,2.4,12,3,12z M21,14H3c-0.6,0-1,0.4-1,1s0.4,1,1,1h18c0.6,0,1-0.4,1-1S21.6,14,21,14z M13,18H3c-0.6,0-1,0.4-1,1s0.4,1,1,1h10c0.6,0,1-0.4,1-1S13.6,18,13,18z"></path>

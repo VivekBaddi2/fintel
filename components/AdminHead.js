@@ -19,7 +19,7 @@ const AdminHead = () => {
                             <a href="/" className="flex rounded ">
                                 <img
                                     className="h-auto w-[200px] -ml-4 sm:-ml-0 sm:h-auto sm:w-48 md:w-48 lg:w-48"
-                                    src="/fintel-black-logo.png"
+                                    src="/fintel-color-logo.png"
                                     alt="Logo"
                                 />
                             </a>

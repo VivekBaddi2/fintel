@@ -11,12 +11,12 @@ const Header = () => {
                 <div className="container px-4 mx-auto sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between">
                         {/* Logo */}
-                        <div className="-ml-7 sm:-ml:0 flex-shrink-0">
+                        <div className="-ml-6 mb-1 sm:-ml:0 flex-shrink-0">
                             <a href="/" className="block rounded">
                                 {/* ✅ The parent must be relative AND have height */}
                                 <div className="relative w-[200px] h-16 sm:w-48 md:w-52 lg:w-50">
                                     <Image
-                                        src="/fintel-black-logo.png"
+                                        src="/fintel-color-logo.png"
                                         alt="Fintel Logo"
                                         fill
                                         className="object-contain"
