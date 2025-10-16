@@ -91,7 +91,7 @@ const ContactSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
         >
-            <section className="text-gray-600 body-font relative w-[95] md:w-[90vw] px-1 md:px-12 mx-auto">
+            <section className="text-gray-600 body-font relative w-[95vw] md:w-[90vw] px-1 md:px-12 mx-auto">
                 <div className="container px-5 mx-auto">
                     <BreadCrumb items={[
                         { label: 'Home', href: '/' },
