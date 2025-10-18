@@ -1,12 +1,13 @@
-"use client"
+'use client'
 import React, { useEffect, useState } from 'react'
+import Swal from 'sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css';
 
 const Page = () => {
     const [id, setId] = useState(null);
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
-
 
     function logoutSession() {
         sessionStorage.removeItem("adminLoggedIn");
@@ -15,27 +16,50 @@ const Page = () => {
 
     // Get id of admin
     const fetchAdminID = async () => {
-        // fetch admin details
-        const res = await fetch("/api/admin", {
-            method: 'GET',
-            headers: { 'Content-Type': 'application/json' },
-        });
-        const data = await res.json();
-        // console.log("Fetched data : ", data._id)
-        const loggedinUser = data.filter((d) => d.username == username)
-        loggedinUser.map((user) => {
-            setId(user._id);
-        });
-
-
+        try {
+            const res = await fetch("/api/admin", {
+                method: 'GET',
+                headers: { 'Content-Type': 'application/json' },
+            });
+            const data = await res.json();
+            const loggedinUser = data.filter((d) => d.username === username)
+            loggedinUser.forEach((user) => {
+                setId(user._id);
+            });
+        } catch (err) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Failed to fetch admin ID',
+                background: '#1f1f1f',
+                color: '#ffffff',
+                width: 350,
+                showClass: { popup: 'swal2-noanimation' },
+                hideClass: { popup: '' }
+            });
+            console.log(err);
+        }
     }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // fetch add user api, send data to the backend and save in db
-        let confirmed = confirm("Are you sure you want to edit admin details?");
-        if (confirmed) {
+        const confirmed = await Swal.fire({
+            title: 'Are you sure?',
+            text: "Do you want to edit admin details?",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes',
+            background: '#1f1f1f',
+            color: '#ffffff',
+            width: 350,
+            showClass: { popup: 'swal2-noanimation' },
+            hideClass: { popup: '' }
+        });
+
+        if (confirmed.isConfirmed) {
             try {
                 const res = await fetch("/api/admin", {
                     method: "PUT",
@@ -43,14 +67,34 @@ const Page = () => {
                     body: JSON.stringify({ id, username, password })
                 });
 
-                const data = await res.json();
-                setMessage("Admin details successfully edited!");
-            }
-            catch (err) {
-                console.log(err);
-                setMessage("Failed to edit admin details.");
-            }
+                if (!res.ok) throw new Error('Failed to edit admin details');
 
+                await res.json();
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success!',
+                    text: 'Admin details successfully edited!',
+                    background: '#1f1f1f',
+                    color: '#ffffff',
+                    width: 350,
+                    showClass: { popup: 'swal2-noanimation' },
+                    hideClass: { popup: '' }
+                });
+
+                setPassword(""); // reset password field
+            } catch (err) {
+                console.log(err);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Failed to edit admin details',
+                    background: '#1f1f1f',
+                    color: '#ffffff',
+                    width: 350,
+                    showClass: { popup: 'swal2-noanimation' },
+                    hideClass: { popup: '' }
+                });
+            }
         }
     }
 
@@ -69,36 +113,39 @@ const Page = () => {
     }, []);
 
     useEffect(() => {
-        fetchAdminID();
+        if (username) fetchAdminID();
     }, [username]);
 
-    // useEffect(async () => {
-    // }, [])
     console.log(id)
     return (
         <>
             <section className='w-[80vw] mx-auto px-2'>
                 <h1 className='text-xl md:text-2xl  mb-4 font-semibold'>Change username or password</h1>
                 <form onSubmit={handleSubmit} className='flex flex-col mb-8 gap-4'>
-                    {/* <div className='flex flex-col gap-1.5'>
-                        <label htmlFor="adminID">Admin ID</label>
-                        <input className="border py-2 px-4 rounded-md bg-gray-200 backdrop-opacity-40" type="text" disabled value={id ?? ""} />
-                    </div> */}
                     <div className='flex flex-col gap-1.5'>
                         <label htmlFor="" className='text-md'>Change Username</label>
-                        <input className="border py-2 px-4 rounded-md" type="text" placeholder={username} value={username} onChange={(e) => { setUsername(e.target.value) }} />
+                        <input
+                            className="border py-2 px-4 rounded-md"
+                            type="text"
+                            placeholder={username}
+                            value={username}
+                            onChange={(e) => { setUsername(e.target.value) }}
+                        />
                     </div>
                     <div className='flex flex-col gap-1.5'>
                         <label htmlFor="" className='text-md'>Change Password</label>
-                        <input className="border py-2 px-4 rounded-md" type="password" placeholder='Enter new password' onChange={(e) => { setPassword(e.target.value) }} />
+                        <input
+                            className="border py-2 px-4 rounded-md"
+                            type="password"
+                            placeholder='Enter new password'
+                            value={password}
+                            onChange={(e) => { setPassword(e.target.value) }}
+                        />
                     </div>
                     <div className='btnContainer flex gap-4'>
                         <div>
-                            <button className="active:scale-95 border py-2 px-4 rounded-lg bg-gray-900 text-white cursor-pointer hover:bg-gray-800" type="submit">Edit Details</button>
+                            <button className="active:scale-95 border py-2 px-4 rounded-lg bg-gray-900 text-white cursor-pointer hover:bg-gray-800" type="submit">Submit</button>
                         </div>
-                        {/* <div>
-                            <button className="border py-2 px-4 rounded-lg bg-red-600 text-white cursor-pointer hover:bg-red-500" type='button' onClick={deleteAdmin}>Delete</button>
-                        </div> */}
                     </div>
                     {message && (
                         <p style={{ color: message.includes("successfully") ? "green" : "red" }}>
@@ -119,4 +166,4 @@ const Page = () => {
     )
 }
 
-export default Page
+export default Page;

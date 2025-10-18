@@ -119,11 +119,6 @@ const Page = ({ params }) => {
                     </button>
                 </form>
 
-                {path && (
-                    <p className='mt-2 p-3'>The URL of uploaded file is:
-                        <a href={path} target='_blank' className='text-gray-900 font-semibold underline'> Click here to access</a>
-                    </p>
-                )}
             </div>
 
             {/* Toast Container */}

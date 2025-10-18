@@ -1,9 +1,25 @@
 @import "tailwindcss";
 
+/* Hide scrollbar globally */
 .noScroll {
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE and Edge */
 }
 .noScroll::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
+}
+
+/* Remove Edge & IE default password reveal and clear buttons */
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
+
+/* Remove default eye icon from Chromium-based browsers like Edge */
+input[type="password"]::-webkit-credentials-auto-fill-button {
+  visibility: hidden;
+  display: none !important;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
 }
